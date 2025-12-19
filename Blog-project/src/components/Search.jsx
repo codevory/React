@@ -1,11 +1,13 @@
 import React from 'react'
+import searchicon from '../assets/searchicon.png'
 
 const Search = () => {
     const data = JSON.parse(localStorage.getItem('postData'))
 
   return (
-    <div className='w-full'>
-      <input type='text' name='search' placeholder='Type to search..' className='w-[30%] h-10 px-2 py-1 rounded bg-gray-700 text-white'/>
+    <div className='w-full h-12 py-1 flex gap-2 md:gap-0 border-2 rounded-[7px] relative text-black'>
+      <img className='absolute left-1 top-3 md:top-2 size-7 md:size-9 rounded' src={searchicon} style={{color:'red'}} typeof='png/img' alt='search-icon' />
+      <input type='text' name='search' placeholder='Type to search..' className=' md:text-xl absolute right-0 md:right-2 outline-0 top-0 w-[80%] h-full px-1 rounded bg-transparent '/>
     </div>
   )
 }
