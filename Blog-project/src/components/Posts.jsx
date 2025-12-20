@@ -1,22 +1,13 @@
 import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
-const Posts = () => {
-    const data = JSON.parse(localStorage.getItem("postData"))
-    let order = JSON.parse(localStorage.getItem("sortedOrder"))
+const Posts = ({posts}) => {
 
-
-          let sortedPost = data.slice().sort((a,b) =>{
-        if(order === "newest"){
-          return b.createdAt - a.createdAt;
-        }
-        else{
-          return a.createdAt - b.createdAt;
-        }
-      })
-
+  const getPreview = (text,limit=30) => {
+    return text.split(" ").slice(0,limit).join(" ") + "--";
+  }
   
-  return ( sortedPost.map((post) => {
+  return ( posts.map((post) => {
         return (
             <div key={post.id}>
      <Link to={`/article/${post.id}`}>
@@ -30,7 +21,7 @@ const Posts = () => {
             <span>{post.time}</span>
           </div>
           <div className=' text-black'>
-           <span className='text-[15px] font-medium md:text-xl'> {post.content}</span>
+           <span className='text-[15px] font-medium md:text-xl'> {getPreview(post.content,30)}</span>
           </div>
         </div>
         </Link>

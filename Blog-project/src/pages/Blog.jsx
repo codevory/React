@@ -1,10 +1,27 @@
-import { useState } from 'react'
+import { useState,useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import Filterpost from '../components/Filterpost'
+import Sortpost from '../components/Sortpost'
 import Search from '../components/Search'
 import Posts from '../components/Posts'
 
  const Blog = () => {
+
+  const [searchQuery,setsearchQuery] = useState('')
+  const [sortedOrder,setSortedOrder] = useState("newest")
+  const posts = JSON.parse(localStorage.getItem("postData")) || []
+
+  const finalPost = useMemo(() => {
+    const filteredPost = posts.filter(post => 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    filteredPost.sort((a,b) =>{
+      if(sortedOrder === "newest") return b.createdAt - a.createdAt;
+      return a.createdAt - b.createdAt;
+    })
+
+    return filteredPost;
+  },[posts,searchQuery,sortedOrder])
 
   return (
     <div className='flex flex-col px-6 py-2 bg-white '>
@@ -12,17 +29,17 @@ import Posts from '../components/Posts'
 
 <span className='block ml-2 w-[60%]'>
 
-             <Filterpost />
+             <Sortpost onSort={setSortedOrder} />
 </span>
 <span className='block mr-1 w-[40%] '>
 
-             <Search  />
+             <Search onSearch={setsearchQuery} />
 </span>
           
 
         </div>
         <div className='flex flex-col gap-3.5'>
-      <Posts />
+      <Posts posts={finalPost} />
         </div>
     </div>
   )
