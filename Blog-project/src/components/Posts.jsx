@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 const Posts = ({posts}) => {
 
   const getPreview = (text,limit=30) => {
-    return text.split(" ").slice(0,limit).join(" ") + "--";
+    if(!text) return " ";
+    const words = text.trim().slice(/\s+/)
+    return words.length > 30 ? words.split(" ").slice(0,limit).join(" ") + " read more ":text;
   }
   
   return ( posts.map((post) => {

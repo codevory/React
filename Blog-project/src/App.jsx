@@ -12,7 +12,7 @@ import EditPost from './pages/Editpost.jsx'
 
 function App() {
  
-  return  <div className='bg-black text-white w-full min-h-screen overflow-hidden'>
+  return  <div className='bg-white text-black w-full min-h-screen overflow-hidden'>
        <Navbar />
        <Routes>
         <Route path='/' element={<Home />} />

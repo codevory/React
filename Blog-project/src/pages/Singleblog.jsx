@@ -29,7 +29,7 @@ const Singleblog = () => {
             
     if(isRedirecting){
          return <div className='absolute top-1/2 left-1/2'>
-<h1 className='bg-purple-700 text-white text-2xl font-semibold '>Redirecting to Home Page...</h1>
+<h1 className='bg-white text-black text-2xl font-semibold '>Redirecting to Home Page...</h1>
         </div>
     }
 
@@ -54,7 +54,7 @@ const Singleblog = () => {
            <span className='text-[15px] font-medium md:text-xl'> {data.content}</span>
           </div>
           <span className='flex justify-between'>
-        <Link to={`/edit/article/${data.id}`}> <button  className='w-30 h-10 bg-amber-950  text-white font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
+        <Link to={`/edit/article/${data.id}`}> <button  className='w-30 h-10 bg-white  text-black font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
         <button onClick={deletePost}  className='bg-red-700 active:bg-red-500 cursor-pointer active:scale-95 text-white font-semibold w-30 h-10 rounded p-3 m-2 flex justify-center items-center'>Delete post</button>
           </span>
        
@@ -63,7 +63,3 @@ const Singleblog = () => {
   )
 }
 export default Singleblog
-
-
- // <h1 className='bg-red-600 text-white font-semibold text-2xl'>Post deleted successfully</h1>
-   //             <button className='bg-orange-700 text-white p-1 rounded-xl cursor-pointer active:scale-95 active:bg-amber-400' onClick={<a href='/'>Return Home</a>}></button>
