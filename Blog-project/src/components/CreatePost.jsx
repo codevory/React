@@ -55,11 +55,11 @@ useEffect(() => {
  <div className='px-2 py-1'>
   <div className='flex justify-between px-2'>
     <div className='flex flex-col gap-1 w-[50%] '>
-      <label for='title' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Enter your post Title</label>
+      <label htmlFor='title' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Enter your post Title</label>
       <input name='title' id='title' className='text-[15px] md:text-[18px] lg:text-xl h-10 w-2/3 rounded-sm' type='text' placeholder='Enter title for post' onChange={(e) => {setTitle(e.target.value)}} value={title} required />
     </div>
-    <div className='flex text-black flex-col gap-1 w-[40%]'>
-     <label for='category' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Select your category</label>
+    <div className='flex text-black flex-col gap-1 w-[45%]'>
+     <label htmlFor='category' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Select your category</label>
      <select value={category} onChange={(e) => {setCategory(e.target.value)}} name='category' id='category' required className=' text-xm md:text-[18px] lg:text-xl font-medium h-10'>
       <option name='select-option' aria-disabled>Select</option>
       <option name='education'aria-selected >Education</option>

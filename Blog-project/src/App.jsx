@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './index.css'
 import Home from './pages/Home'
-import CreatePost from './pages/CreatePost.jsx'
+import CreatePost from './components/CreatePost.jsx'
 import { Outlet, Route, Routes } from "react-router-dom"
 import PagenotFound from './pages/PagenotFound'
 import Blog from './pages/Blog'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Singleblog from './pages/Singleblog'
-import EditPost from './pages/Editpost.jsx'
+import Singleblog from './components/SingleBlogView.jsx'
+import EditPost from './components/Editpost.jsx'
 
 function App() {
  

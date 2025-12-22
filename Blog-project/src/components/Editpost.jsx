@@ -64,20 +64,20 @@ setIsRedirecting(true)
   );
 }
         return (
-                <form  onSubmit={handleUpdate} className='p-1 h-full m-4 flex flex-col justify-between bg-amber-900 text-white'>
+                <form  onSubmit={handleUpdate} className='p-1 h-full m-4 flex flex-col justify-between text-black'>
                  <div className='flex  justify-between mb-2'>
                     <span className='flex flex-col gap-1 w-full'>
- <label className='font-semibold text-2xl'>Set New Title</label>
- <input className='max-w-[70%] min-w-[40%] outline-amber-100 h-10 font-medium rounded-xl p-1 flex justify-center items-center border-white bg-gray-500 text-gray-100' type='text' value={newTitle} onChange={(e) => {setNewtitle(e.target.value)}} />
+ <label htmlFor='title' className='font-semibold text-[19px] md:text-xl '>Set New Title</label>
+ <input id='title' className='max-w-[70%] min-w-[40%] outline-amber-100 h-10 font-sans rounded-[10px] p-1 flex justify-center items-center border-white bg-gray-100 text-gray-950' type='text' value={newTitle} onChange={(e) => {setNewtitle(e.target.value)}} />
                     </span>
                     <span className='flex flex-col gap-1 mr-2'>
-   <label className='text-2xl font-semibold'>Category</label>
-    <span className='bg-gray-500 text-white rounded-xl font-medium px-3 py-2 w-38'>{data.category}</span>
+   <p  className='text-[19px] font-semibold'>Category</p>
+    <span className='bg-gray-200 text-gray-800 rounded-[10px] font-sans px-3 py-2 w-38 cursor-not-allowed'>{data.category}</span>
                     </span>
              </div>
                 <span className='flex flex-col gap-2 mt-2'>
-                    <label className='text-2xl font-semibold'>Edit content</label>
-                    <textarea className=' px-2 py-1' rows={12} cols={16} value={newCont} onChange={(e) => {setNewcont(e.target.value)}}>
+                    <label htmlFor='content-description' className='text-2xl font-semibold'>Edit content</label>
+                    <textarea id='content-description' className=' px-2 py-1' rows={12} cols={16} value={newCont} onChange={(e) => {setNewcont(e.target.value)}}>
 
                     </textarea>
                 </span>
