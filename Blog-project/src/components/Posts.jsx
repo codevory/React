@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Posts = ({posts}) => {
 
   const getPreview = (text,limit=30) => {
-    if(!text) return "";
+    if(!text) return " No post found!";
     const words = text.trim().slice(/\s+/)
     return words.length > 30 ? words.split(" ").slice(0,limit).join(" ") :text;
   }

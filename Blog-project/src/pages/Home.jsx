@@ -49,7 +49,10 @@ const Home = () => {
 ]
   const [searchQuery, setsearchQuery] = useState("")
   const [sortedOrder,setSortedOrder] = useState("newest")
-  const posts = JSON.parse(localStorage.getItem("postData")) || dumy
+  const posts = JSON.parse(localStorage.getItem("postData")) || []
+ // if(!posts){
+  //  localStorage.setItem("postData",JSON.stringify(dumy))
+  //}
 
   const finalPosts = useMemo(() => {
     let filteredPost = posts.filter(post => post.title.toLowerCase().includes(searchQuery.toLowerCase()))

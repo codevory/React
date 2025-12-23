@@ -27,13 +27,17 @@ const [copy,setCopy] = useState(() => {
 
 function handlepost(){
 const postData = {
+ 'id': `art-${crypto.randomUUID()}`,
  'title':title,
  'category':category,
  'content':content,
  'date':currentDate,
  'time':time,
- 'id':'art-' + Math.random().toString(36).substring(2,7),
- 'createdAt':Date.now()
+ 'createdAt':Date.now(),
+ engagementData : {
+  'likes':0,
+  'likedBy':[]
+ }
 
 }
 const updatedData = [...copy,postData]

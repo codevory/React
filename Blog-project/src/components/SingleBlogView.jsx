@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams , useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import Likebtn from './Buttons/Likebtn'
 
 
 const Singleblog = () => {
@@ -54,6 +55,9 @@ const Singleblog = () => {
            <span className='text-[15px] font-sans md:text-xl'> {data.content}</span>
           </div>
           <span className='flex justify-between'>
+            <span>
+              <Likebtn />
+            </span>
         <Link to={`/edit/article/${data.id}`}> <button  className='w-30 h-10 bg-green-600  text-black font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
         <button onClick={deletePost}  className='bg-red-500 active:bg-red-800 cursor-pointer active:scale-95 text-white font-semibold w-30 h-10 rounded p-3 m-2 flex justify-center items-center'>Delete post</button>
           </span>
