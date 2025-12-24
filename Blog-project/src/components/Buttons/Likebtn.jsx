@@ -6,27 +6,29 @@ import { useParams } from "react-router-dom";
 
 
 const Likebtn = (post) => {
-    const posts = JSON.parse(localStorage.getItem("postData"))
+   const [liked,setLiked] = useState(false)
+  const [likeCount ,setLikeCount] = useState(0)
     const { id } = useParams()
-    const [likeCount ,setLikeCount] = useState(0)
-    const [liked,setLiked] = useState(false)
+    const posts = JSON.parse(localStorage.getItem("postData"))
     const data = posts.find(p => p.id == id)
 
 
     useEffect(() => {
-        let updated = posts.map((post) => {
-     if(post.id == data.id)
-        return {
-       ...post,
-       engagementData :{
-     ...post.engagementData,
-     'likes':post.engagementData.likes + likeCount
-       }
+      let updated = posts.map((post) => {
+        if(post.id == data.id)
+          return {
+        ...post,
+        engagementData :{
+          ...post.engagementData,
+          'likes':post.engagementData.likes + likeCount
         }
-        return post
-        })
-        localStorage.setItem("postData",JSON.stringify(updated))
-    },[liked])
+      }
+      return post
+    })
+    localStorage.setItem("postData",JSON.stringify(updated))
+  },[liked])
+
+
 
   return (
     <div className="flex gap-1 justify-center items-center h-13">
@@ -35,7 +37,17 @@ const Likebtn = (post) => {
    }}>
 {liked ? (<FaHeart size={26} color="red" />) : (<FaHeart size={24} color="black" className="active:scale-95" />)}
    </button>
-   <span>{likeCount}</span>
+  <p>
+    {posts.map((post,idx) => {
+      if(post.id == data.id){
+        return (
+          <span key={post.id}>
+       {post[idx].engagementData.likes}
+          </span>
+        )
+      }
+    })}
+  </p>
     </div>
   )
 }
