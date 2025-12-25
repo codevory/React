@@ -69,7 +69,7 @@ useEffect(() => {
       <option name='education'aria-selected >Education</option>
       <option name='technology' aria-selected>Technology</option>
       <option name='language' aria-selected>Language</option>
-      <option name='career guidance' aria-selected>Career Guidance</option>
+      <option name='career guidance' aria-selected>Guidance</option>
      </select>
     </div>
   </div>

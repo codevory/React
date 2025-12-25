@@ -9,50 +9,96 @@ import Search from '../components/Search'
 
 const Home = () => {
 
-  const dumy = [
+  let dumy = [
     {
-        "title": "Learn HTML ",
+        "id": "art-6a06b59e-554d-407d-b93c-fec8d68146ef",
+        "title": "1️⃣ The Power of Consistency",
         "category": "Education",
-        "content": "HTML is a markup language that web browsers use to interpret and compose text, images, and other material into visible or audible web pages. Default characteristics for every item of HTML markup are defined in the browser, and these characteristics can be altered or enhanced by the web page designer's additional use of CSS. Many of the text elements are mentioned in the 1988 ISO technical report TR 9537 Techniques for using SGML, which describes the features of early text formatting languages such as that used by the RUNOFF command developed in the early 1960s for the CTSS (Compatible Time-Sharing System) operating system. These formatting commands were derived from the commands used by typesetters to manually format documents. However, the SGML concept of generalized markup is based on elements (nested annotated ranges with attributes) rather than merely print effects, with separate structure and markup. HTML has been progressively moved in this direction with CSS.HTML is a markup language that web browsers use to interpret and compose text, images, and other material into visible or audible web pages. Default characteristics for every item of HTML markup are defined in the browser, and these characteristics can be altered or enhanced by the web page designer's additional use of CSS. Many of the text elements are mentioned in the 1988 ISO technical report TR 9537 Techniques for using SGML, which describes the features of early text formatting languages such as that used by the RUNOFF command developed in the early 1960s for the CTSS (Compatible Time-Sharing System) operating system. These formatting commands were derived from the commands used by typesetters to manually format documents. However, the SGML concept of generalized markup is based on elements (nested annotated ranges with attributes) rather than merely print effects, with separate structure and markup. HTML has been progressively moved in this direction with CSS.",
-        "date": "12/20/2025",
-        "time": "8:36 PM",
-        "id": "art-imary",
-        "createdAt": 1766243250979
+        "content": "Consistency is often underestimated, yet it plays a huge role in long-term success. Small actions repeated daily compound into meaningful results over time. Whether you are learning to code, building a habit, or improving your health, showing up regularly matters more than intensity. Many people quit early because progress feels slow, but consistency quietly works in the background. Even 30 minutes a day can outperform irregular bursts of effort. The key is to create a routine that fits your lifestyle and stick to it patiently. Progress may be invisible at first, but it always reveals itself eventually.let it be",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508783086,
+        "engagementData": {
+            "likes": 5,
+            "likedBy": []
+        }
     },
     {
-        "title": "Learn CSS Now ",
+        "id": "art-5f20231b-f97d-493c-8187-fa7fb51f8485",
+        "title": "2️⃣ Why Learning Never Stops",
         "category": "Education",
-        "content": "HTML is a markup language that web browsers use to interpret and compose text, images, and other material into visible or audible web pages. Default characteristics for every item of HTML markup are defined in the browser, and these characteristics can be altered or enhanced by the web page designer's additional use of CSS. Many of the text elements are mentioned in the 1988 ISO technical report TR 9537 Techniques for using SGML, which describes the features of early text formatting languages such as that used by the RUNOFF command developed in the early 1960s for the CTSS (Compatible Time-Sharing System) operating system. These formatting commands were derived from the commands used by typesetters to manually format documents. However, the SGML concept of generalized markup is based on elements (nested annotated ranges with attributes) rather than merely print effects, with separate structure and markup. HTML has been progressively moved in this direction with CSS.",
-        "date": "12/20/2025",
-        "time": "8:36 PM",
-        "id": "art-verge",
-        "createdAt": 1766243277237
+        "content": "Learning does not end with school or college—it evolves with time. In today’s fast-changing world, new skills are constantly emerging, especially in technology. People who keep learning stay adaptable and relevant. Learning also improves confidence and problem-solving ability. It doesn’t always mean formal education; reading, experimenting, and building projects count too. Even failures teach valuable lessons. The mindset of continuous learning keeps curiosity alive and helps individuals grow personally and professionally. When learning becomes a habit, growth becomes a natural outcome rather than a forced effort.",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508865143,
+        "engagementData": {
+            "likes": 2,
+            "likedBy": []
+        }
     },
     {
-        "title": "Guidance to tourists for winter ",
+        "id": "art-6a6b8e86-b0f3-4cf8-abe2-2d413cf7ddd4",
+        "title": "3️⃣ The Importance of Time Management",
+        "category": "Education",
+        "content": "Time is one resource everyone has equally, yet people use it very differently. Effective time management helps reduce stress and improve productivity. Planning tasks, setting priorities, and avoiding distractions can dramatically change daily output. Instead of multitasking, focusing on one task at a time improves quality and speed. Tools like to-do lists and calendars make work more organized. Managing time well doesn’t mean working all day—it means working smartly and leaving space for rest. When time is respected, goals become easier to achieve and life feels more balanced.",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508880738,
+        "engagementData": {
+            "likes": 6,
+            "likedBy": []
+        }
+    },
+    {
+        "id": "art-70791b73-11ff-432c-b1aa-4b8d32050254",
+        "title": "4️⃣ Building Skills Through Practice",
         "category": "Career Guidance",
-        "content": "We specialize in curating custom trips to ensure you have a truly unique experience and are given the personal attention needed to safely accomplish your goals in the backcountry. With our team of experienced guides as your steadfast companions, we empower you to forge a deep connection with nature, navigate untamed terrains, and uncover hidden wonders.",
-        "date": "12/20/2025",
-        "time": "8:36 PM",
-        "id": "art-njcub",
-        "createdAt": 1766243377351
+        "content": "Skills are not built by reading alone; they grow through consistent practice. Whether it’s coding, writing, or problem-solving, hands-on experience strengthens understanding. Mistakes are part of the learning process and should not be feared. Each error highlights gaps that need improvement. Practicing regularly builds confidence and sharpens intuition. Over time, things that once felt difficult become natural. The key is to start small, practice often, and stay patient. Skill-building is a journey, and steady effort always beats talent without practice.",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508896692,
+        "engagementData": {
+            "likes": 25,
+            "likedBy": []
+        }
     },
     {
-        "title": "Tutorials for Html",
-        "category": "Language",
-        "content": "HTML is a markup language that web browsers use to interpret and compose text, images, and other material into visible or audible web pages. Default characteristics for every item of HTML markup are defined in the browser, and these characteristics can be altered or enhanced by the web page designer's additional use of CSS. Many of the text elements are mentioned in the 1988 ISO technical report TR 9537 Techniques for using SGML, which describes the features of early text formatting languages such as that used by the RUNOFF command developed in the early 1960s for the CTSS (Compatible Time-Sharing System) operating system. These formatting commands were derived from the commands used by typesetters to manually format documents. However, the SGML concept of generalized markup is based on elements (nested annotated ranges with attributes) rather than merely print effects, with separate structure and markup. HTML has been progressively moved in this direction with CSS.",
-        "date": "12/22/2025",
-        "time": "8:50 PM",
-        "id": "art-45alh",
-        "createdAt": 1766416856255
+        "id": "art-f3617ac5-1918-4450-9dc1-c888e3b486ba",
+        "title": "5️⃣ The Role of Discipline in Success ",
+        "category": "Career Guidance",
+        "content": "Motivation comes and goes, but discipline stays. Discipline helps people continue working even when motivation fades. It creates structure and accountability in daily life. Successful individuals rely more on habits than emotions. Discipline doesn’t mean being harsh—it means staying committed to your goals. Simple routines like fixed study hours or daily reviews can create massive impact over time. With discipline, progress becomes predictable. When actions are guided by discipline, success becomes a result rather than a coincidence.",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508915604,
+        "engagementData": {
+            "likes": 7,
+            "likedBy": []
+        }
+    },
+    {
+        "id": "art-84ea2633-48cd-433f-a583-dbb220474d13",
+        "title": "6️⃣ Why Simplicity Works",
+        "category": "Education",
+        "content": "Simplicity is powerful in a world full of complexity. Simple solutions are easier to understand, maintain, and improve. Whether in design, coding, or daily decisions, simplicity reduces confusion and errors. Overcomplicating things often leads to delays and frustration. Clear goals and simple plans increase execution speed. Focusing on what truly matters helps eliminate unnecessary distractions. Simplicity does not mean lack of depth—it means clarity of purpose. When things are simple, consistency and progress become much easier to sustain.",
+        "date": "12/23/2025",
+        "time": "10:22 PM",
+        "createdAt": 1766508941158,
+        "engagementData": {
+            "likes": 10,
+            "likedBy": []
+        }
     }
 ]
   const [searchQuery, setsearchQuery] = useState("")
   const [sortedOrder,setSortedOrder] = useState("newest")
-  const posts = JSON.parse(localStorage.getItem("postData")) || []
- // if(!posts){
-  //  localStorage.setItem("postData",JSON.stringify(dumy))
-  //}
+  let posts = JSON.parse(localStorage.getItem("postData")) || []
+  if(posts.length <= 0){
+    localStorage.setItem("postData",JSON.stringify(dumy))
+  }
+  else{
+    posts = posts;
+  }
+
 
   const finalPosts = useMemo(() => {
     let filteredPost = posts.filter(post => post.title.toLowerCase().includes(searchQuery.toLowerCase()))

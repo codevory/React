@@ -16,20 +16,22 @@ function EditPost(){
         e.preventDefault()
        const updatedPost = post.map((p) => {
         if(p.id === data.id){
-            return {
-                ...p,
-                'title':newTitle,
-                'content':newCont
-            }
-        }
-        return p;
-       })
-       localStorage.setItem("postData",JSON.stringify(updatedPost))
-       alert("post data updated successfully ")
+                      if(newTitle != p.title || newCont != p.content){
+                                           alert("post data updated successfully ")                       
+                        return {
+                            ...p,
+                            'title':newTitle,
+                            'content':newCont
+                        }
+                      }
+                      else{
+                        alert("Nothing was updated")
+                      }
+                    }
+                    return p;
+                  })
+   localStorage.setItem("postData",JSON.stringify(updatedPost))
 setIsRedirecting(true)      
- setTimeout(()=>{
-      navigate('/blog')
-       },1000)
     }
 
 
@@ -45,21 +47,24 @@ setIsRedirecting(true)
 
      
           if (isRedirecting) {
+            setTimeout(() => {
+              navigate('/')
+            }, 500);
   return (
     <div style={{
       height: '100vh',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'purple',
-      color: 'white',
+      backgroundColor: 'white',
+      color: 'black',
       fontSize: '24px',
       position: 'fixed',
       top: 0,
       left: 0,
       width: '100%'
     }}>
-      <h1>Redirecting to blog Page...</h1>
+      <p className='bg-blue-800 text-white w-auto h-13 flex justify-center items-center p-2 font-semibold rounded-[9px] active:scale-95 cursor-auto'>Returning to Home</p>
     </div>
   );
 }

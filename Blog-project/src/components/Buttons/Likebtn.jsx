@@ -37,17 +37,7 @@ const Likebtn = (post) => {
    }}>
 {liked ? (<FaHeart size={26} color="red" />) : (<FaHeart size={24} color="black" className="active:scale-95" />)}
    </button>
-  <p>
-    {posts.map((post,idx) => {
-      if(post.id == data.id){
-        return (
-          <span key={post.id}>
-       {post[idx].engagementData.likes}
-          </span>
-        )
-      }
-    })}
-  </p>
+  <p>{likeCount}</p>
     </div>
   )
 }
