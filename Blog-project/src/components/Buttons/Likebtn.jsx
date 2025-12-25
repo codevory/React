@@ -35,7 +35,7 @@ const Likebtn = (post) => {
    <button onClick={() => {setLiked(!liked)
     {likeCount == 0 ? (setLikeCount(likeCount + 1)) : (setLikeCount(likeCount - 1))}
    }}>
-{liked ? (<FaHeart size={26} color="red" />) : (<FaHeart size={24} color="black" className="active:scale-95" />)}
+{liked ? (<FaHeart size={26} color="red" />) : (<FaHeart size={24} color="pink" className=" active:scale-95" />)}
    </button>
   <p>{likeCount}</p>
     </div>
