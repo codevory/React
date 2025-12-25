@@ -111,8 +111,8 @@ const Home = () => {
   },[searchQuery,sortedOrder,posts])
 
   return (
-    <div className='flex flex-col px-6 py-2 bg-white min-h-screen '>
-        <div className='flex justify-between items-center py-1 w-full'>
+    <div className='flex flex-col px-6 py-2 min-h-screen '>
+        <div className=' flex justify-between items-center py-1 w-full'>
 
 <span className='block ml-2 w-[40%]'>
 

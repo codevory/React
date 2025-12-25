@@ -69,15 +69,15 @@ setIsRedirecting(true)
   );
 }
         return (
-                <form  onSubmit={handleUpdate} className='p-1 h-full m-4 flex flex-col justify-between text-black'>
+                <form  onSubmit={handleUpdate} className='p-1 h-full m-4 flex flex-col justify-between'>
                  <div className='flex  justify-between mb-2'>
                     <span className='flex flex-col gap-1 w-full'>
  <label htmlFor='title' className='font-semibold text-[19px] md:text-xl '>Set New Title</label>
- <input id='title' className='max-w-[70%] min-w-[40%] outline-amber-100 h-10 font-sans rounded-[10px] p-1 flex justify-center items-center border-white bg-gray-100 text-gray-950' type='text' value={newTitle} onChange={(e) => {setNewtitle(e.target.value)}} />
+ <input id='title' className='max-w-[70%] min-w-[40%] outline-amber-100 h-10 font-sans rounded-[10px] p-1 flex justify-center items-center border-white outline-0' type='text' value={newTitle} onChange={(e) => {setNewtitle(e.target.value)}} />
                     </span>
                     <span className='flex flex-col gap-1 mr-2'>
    <p  className='text-[19px] font-semibold'>Category</p>
-    <span className='bg-gray-200 text-gray-800 rounded-[10px] font-sans px-3 py-2 w-38 cursor-not-allowed'>{data.category}</span>
+    <span className=' rounded-[10px] font-sans px-3 py-2 w-38 cursor-not-allowed'>{data.category}</span>
                     </span>
              </div>
                 <span className='flex flex-col gap-2 mt-2'>
