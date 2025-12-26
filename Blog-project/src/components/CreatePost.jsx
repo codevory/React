@@ -1,10 +1,9 @@
 import { useState , useEffect} from 'react'
 
-
   const date = new Date();
   const currentDate =  date.toLocaleString('en-US',{
     year:'numeric',
-    month:'numeric',
+    month:'short',
     day:'numeric',
   })
 
@@ -26,9 +25,16 @@ const [copy,setCopy] = useState(() => {
 
 
 function handlepost(){
+      const slugify = (title) =>   title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+
 const postData = {
  'id': `art-${crypto.randomUUID()}`,
  'title':title,
+ 'slug':slugify(title),
  'category':category,
  'content':content,
  'date':currentDate,

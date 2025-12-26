@@ -7,15 +7,15 @@ function EditPost(){
     const [newTitle,setNewtitle] = useState('')
     const [newCont,setNewcont] = useState('')
     const [isRedirecting,setIsRedirecting] = useState(false)
-    const { id } = useParams()
+    const { slug } = useParams()
     const post = JSON.parse(localStorage.getItem("postData")) || []
-    const data = post.find(a => a.id === id)
+    const data = post.find(a => a.slug === slug)
 
     //post update function starts here
     function handleUpdate(e){
         e.preventDefault()
        const updatedPost = post.map((p) => {
-        if(p.id === data.id){
+        if(p.slug === data.slug){
                       if(newTitle != p.title || newCont != p.content){
                                            alert("post data updated successfully ")                       
                         return {

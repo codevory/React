@@ -15,8 +15,8 @@ function App() {
        <Navbar />
        <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/edit/article/:id' element={<EditPost />} />
-        <Route path='/article/:id' element={<Singleblog />} />
+        <Route path='/edit/article/:slug' element={<EditPost />} />
+        <Route path='/article/:slug' element={<Singleblog />} />
         <Route path='/post' element={<CreatePost />} />
         <Route path='*' element={<PagenotFound />} />
       </Routes>

@@ -8,14 +8,14 @@ import { useParams } from "react-router-dom";
 const Likebtn = (post) => {
    const [liked,setLiked] = useState(false)
   const [likeCount ,setLikeCount] = useState(0)
-    const { id } = useParams()
+    const { slug } = useParams()
     const posts = JSON.parse(localStorage.getItem("postData"))
-    const data = posts.find(p => p.id == id)
+    const data = posts.find(p => p.slug == slug)
 
 
     useEffect(() => {
       let updated = posts.map((post) => {
-        if(post.id == data.id)
+        if(post.slug == data.slug)
           return {
         ...post,
         engagementData :{

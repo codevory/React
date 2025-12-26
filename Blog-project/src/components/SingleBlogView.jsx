@@ -7,14 +7,14 @@ import Likebtn from './Buttons/Likebtn'
 const Singleblog = () => {
    const [isRedirecting,setIsRedirecting] = useState(false)
     const navigate = useNavigate()
-    const { id } = useParams()
+    const { slug } = useParams()
     let post = JSON.parse(localStorage.getItem("postData")) || []
 
 
-    let data = post.find(a => a.id === id)
+    let data = post.find(a => a.slug == slug)
          //delete post functions
     function deletePost(){
-        const newItems = post.filter(item => item.id !== data.id)
+        const newItems = post.filter(item => item.slug !== data.slug)
         localStorage.setItem("postData",JSON.stringify(newItems))
         alert("Post deleted successfully")
         setIsRedirecting(true)
@@ -25,7 +25,7 @@ const Singleblog = () => {
 
 
     post = JSON.parse(localStorage.getItem("postData")) || []
-    data = post.find(a => a.id === id)
+    data = post.find(a => a.slug == slug)
 
             
     if(isRedirecting){
@@ -58,7 +58,7 @@ const Singleblog = () => {
             <span>
               <Likebtn />
             </span>
-        <Link to={`/edit/article/${data.id}`}> <button  className='w-30 h-10 bg-green-600  font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
+        <Link to={`/edit/article/${data.slug}`}> <button  className='w-30 h-10 bg-green-600  font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
         <button onClick={deletePost}  className='bg-red-500 active:bg-red-800 cursor-pointer active:scale-95  font-semibold w-30 h-10 rounded p-3 m-2 flex justify-center items-center'>Delete post</button>
           </span>
        
