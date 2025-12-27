@@ -64,24 +64,24 @@ setIsRedirecting(true)
       left: 0,
       width: '100%'
     }}>
-      <p className='bg-blue-800 text-white w-auto h-13 flex justify-center items-center p-2 font-semibold rounded-[9px] active:scale-95 cursor-auto'>Returning to Home</p>
+      <p className='bg-blue-800 text-white w-auto h-12 flex justify-center items-center p-2 font-semibold rounded-[9px] active:scale-95 cursor-auto'>Returning to Home</p>
     </div>
   );
 }
         return (
                 <form  onSubmit={handleUpdate} className='p-1 h-full m-4 flex flex-col justify-between'>
-                 <div className='flex  justify-between mb-2'>
-                    <span className='flex flex-col gap-1 w-full'>
- <label htmlFor='title' className='font-semibold text-[19px] md:text-xl '>Set New Title</label>
+                 <div className='flex items-center w-full mb-2'>
+                    <span className='flex flex-col w-3/4 '>
+ <label htmlFor='title' className='font-serif text-[19px] md:text-xl '>Set New Title</label>
  <input id='title' className='max-w-[70%] min-w-[40%] outline-amber-100 h-10 font-sans rounded-[10px] p-1 flex justify-center items-center border-white outline-0' type='text' value={newTitle} onChange={(e) => {setNewtitle(e.target.value)}} />
                     </span>
-                    <span className='flex flex-col gap-1 mr-2'>
-   <p  className='text-[19px] font-semibold'>Category</p>
-    <span className=' rounded-[10px] font-sans px-3 py-2 w-38 cursor-not-allowed'>{data.category}</span>
+                    <span className='flex flex-col gap-1 items-start w-1/4'>
+   <p  className='text-[15px] px-1 font-serif md:px-2'>Category</p>
+    <span className='font-sans px-2 py-1 cursor-not-allowed bg-blue-100 text-blue-800 rounded-[5px]'>{data.category}</span>
                     </span>
              </div>
                 <span className='flex flex-col gap-2 mt-2'>
-                    <label htmlFor='content-description' className='text-2xl font-semibold'>Edit content</label>
+                    <label htmlFor='content-description' className='text-xl font-serif'>Edit content</label>
                     <textarea id='content-description' className=' px-2 py-1' rows={12} cols={16} value={newCont} onChange={(e) => {setNewcont(e.target.value)}}>
 
                     </textarea>

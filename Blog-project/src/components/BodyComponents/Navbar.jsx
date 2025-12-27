@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Logo from '/logoVistle.png'
-import '../index.css'
+import '../../index.css'
 import { NavLink } from 'react-router-dom';
-import ToggleButton from './ToggleButton';
+import ToggleButton from '../Buttons/ToggleButton';
 const Navbar = () => {
  
   return (

@@ -69,8 +69,8 @@ useEffect(() => {
       <input name='title' id='title' className='text-[15px] md:text-[18px] lg:text-xl h-10 w-2/3 rounded-sm outline-0 ' type='text' placeholder='Enter title for post' onChange={(e) => {setTitle(e.target.value)}} value={title} required />
     </div>
     <div className='flex flex-col gap-1 w-[45%]'>
-     <label htmlFor='category' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Select your category</label>
-     <select value={category} onChange={(e) => {setCategory(e.target.value)}} name='category' id='category' required className='dark:bg-black dark:text-white outline-0 text-xm md:text-[18px] lg:text-xl font-medium h-10'>
+     <label htmlFor='category' className='text-[14px] font-serif md:text-xl lg:text-2xl'>Select your category</label>
+     <select value={category} onChange={(e) => {setCategory(e.target.value)}} name='category' id='category' required className='dark:bg-zinc-800 dark:text-white outline-0 text-xs md:text-[18px] lg:text-xl font-medium h-10'>
       <option name='select-option' aria-disabled>Select</option>
       <option name='education'aria-selected >Education</option>
       <option name='technology' aria-selected>Technology</option>

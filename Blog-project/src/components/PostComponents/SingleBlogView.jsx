@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams , useNavigate} from 'react-router-dom'
 import { useState } from 'react'
-import Likebtn from './Buttons/Likebtn'
+import Likebtn from '../Buttons/Likebtn'
 
 
 const Singleblog = () => {
@@ -42,17 +42,18 @@ const Singleblog = () => {
 
 
   return (
-     <div className=' flex flex-col  min-h-40  border-2 rounded-[7px] px-5 py-1 m-4 '>
-          <div className='flex justify-between'>
-        <span className='text-[17px] font-semibold md:text-xl md:font-stretch-50%' > {data.title}</span>
-         <span className='text-[17px] font-semibold md:text-xl md:font-bold rounded-lg p-1'>{data.category}</span>
-          </div>
-          <div className='flex justify-between font-mono text-[14px]'>
-            <span>{data.date}</span>
+     <div className=' flex flex-col gap-1 min-h-40  border-2 rounded-[7px] px-5 py-1 m-4 '>
+          <div className='flex flex-col justify-between gap-1'>
+        <span className='text-[18px] font-serif md:text-2xl' > {data.title}</span>
+             <div className='flex items-center gap-2 font-mono text-[14px]'>
+         <span className='text-[15px] font-medium md:text-[16px] md:font-bold rounded-[5px] px-2 bg-blue-100 text-blue-700'>{data.category}</span>
+            <span>{data.date} {"•"}</span>
             <span>{data.time}</span>
           </div>
+          </div>
+  
           <div className=''>
-           <span className='text-[15px] font-sans md:text-xl'> {data.content}</span>
+           <span className='text-[14px] font-sans md:text-xl'> {data.content}</span>
           </div>
           <span className='flex justify-between'>
             <span>

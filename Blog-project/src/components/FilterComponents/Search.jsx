@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import searchicon from '../assets/searchicon.png'
+import searchicon from '/searchicon.png'
 
 const Search = ({onSearch}) => {
   return (
