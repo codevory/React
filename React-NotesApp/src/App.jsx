@@ -15,15 +15,28 @@ const [task , setTask] = useState([])
 
 function submitHandler(e){
   e.preventDefault()
+  if(!title){
+ return alert("title field is empty")
+  } else if(!details){
+    return alert("details section is empty")
+  }
+    
+    
   setTask([...task,{title,details}])
   setTitle('')
   setDetails('')
 }
 
 const deleteTask = (idx) => {
-  const copyTask = [...task]
-  copyTask.splice(idx,1)
-  setTask(copyTask)
+ const permit =  confirm("Are you sure to delete the task");
+ if(permit){
+   const copyTask = [...task]
+   copyTask.splice(idx,1)
+   setTask(copyTask)
+ }
+ else{
+  return ;
+ }
 }
 
   return (
@@ -32,8 +45,8 @@ const deleteTask = (idx) => {
     <div className='md:flex w-screen gap-5 p-5'> 
    <form className='md:w-[52%]  flex flex-col ' onSubmit={(e)=> {submitHandler(e)}}>
        <h2 className='text-xl text-blue-50 font-bold flex justify-center items-center  my-2'>Add Notes</h2>
-       <input type="text" placeholder='Enter Note Headig' value={title} onChange={(e) => {setTitle(e.target.value)}} className=' flex items-start font-medium md:text-[20px] px-10 py-5  my-2  text-white border-2 rounded-[7px] w-full outline-none '  />
-       <textarea type="text" placeholder='Enter Note Details' value={details} onChange={(e) => {setDetails(e.target.value)}} className=' h-33  font-medium md:text-[20px] px-10  py-4  my-2 text-white border-2 rounded-[7px] w-full outline-none'  />
+       <input type="text" placeholder='Enter Note Headig' value={title} onChange={(e) => {setTitle(e.target.value)}} className=' flex items-start font-medium md:text-[20px] px-10 py-5  my-2  text-white border-2 rounded-[7px] w-full outline-none ' required></input>
+       <textarea type="text" placeholder='Enter Note Details' value={details} onChange={(e) => {setDetails(e.target.value)}} className=' h-33  font-medium md:text-[20px] px-10  py-4  my-2 text-white border-2 rounded-[7px] w-full outline-none' required />
        <button onClick={submitHandler} className='px-10 py-3 my-2 text-black font-bold border-2 bg-white rounded-md w-full outline-none cursor-pointer active:bg-gray-400 '>Add</button>
     </form>
 
