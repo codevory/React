@@ -1,9 +1,19 @@
 @import 'tailwindcss';
 #root{
-    width:max-content;
+    max-width: screen;
+    overflow: hidden;
     padding:0;
     margin:0;
 }
 #tasks::-webkit-scrollbar{
     display: none;
-}
+};
+
+
+/* body.dark{
+    @apply bg-zinc-900 text-white;
+};
+
+body.light{
+    @apply bg-white text-zinc-900;
+} */
