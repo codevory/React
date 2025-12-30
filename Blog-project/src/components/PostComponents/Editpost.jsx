@@ -18,20 +18,20 @@ function EditPost(){
         if(p.slug === data.slug){
                       if(newTitle != p.title || newCont != p.content){
                                            alert("post data updated successfully ")                       
+                                           setIsRedirecting(true)      
                         return {
                             ...p,
                             'title':newTitle,
                             'content':newCont
                         }
                       }
-                      else{
+                      else if(newTitle == p.title || newCont == p.content){
                         alert("Nothing was updated")
                       }
                     }
                     return p;
                   })
    localStorage.setItem("postData",JSON.stringify(updatedPost))
-setIsRedirecting(true)      
     }
 
 
@@ -56,15 +56,13 @@ setIsRedirecting(true)
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'white',
-      color: 'black',
       fontSize: '24px',
       position: 'fixed',
       top: 0,
       left: 0,
       width: '100%'
     }}>
-      <p className='bg-blue-800 text-white w-auto h-12 flex justify-center items-center p-2 font-semibold rounded-[9px] active:scale-95 cursor-auto'>Returning to Home</p>
+      <p className='bg-green-600 font-serif text-xl  flex justify-center items-center px-3'>Post updated Successfully</p>
     </div>
   );
 }

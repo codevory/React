@@ -29,8 +29,8 @@ const Singleblog = () => {
 
             
     if(isRedirecting){
-         return <div className='absolute top-1/2 left-1/2'>
-<h1 className=' text-2xl font-semibold '>Redirecting to Home Page...</h1>
+         return <div className='flex justify-center mt-10 '>
+<h1 className='bg-red-300 text-2xl font-semibold '>Post deleted successfully..</h1>
         </div>
     }
 
@@ -59,8 +59,16 @@ const Singleblog = () => {
             <span>
               <Likebtn />
             </span>
-        <Link to={`/edit/article/${data.slug}`}> <button  className='w-30 h-10 bg-green-600  font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
-        <button onClick={deletePost}  className='bg-red-500 active:bg-red-800 cursor-pointer active:scale-95  font-semibold w-30 h-10 rounded p-3 m-2 flex justify-center items-center'>Delete post</button>
+        <Link to={`/edit/article/${data.slug}`}> <button  className='w-30 h-10 bg-green-500  font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
+        <button onClick={() => {
+        let resp =  confirm("Do you want to delete this Post");
+        if(resp){
+          return deletePost();
+        }
+        else{
+          return 0;
+        }
+        }}  className='bg-red-500 active:bg-red-500 cursor-pointer active:scale-95  font-semibold w-30 h-10 rounded p-3 m-2 flex justify-center items-center'>Delete post</button>
           </span>
        
         </div>
