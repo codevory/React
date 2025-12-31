@@ -80,7 +80,7 @@ option {
 
 /* Color pallete */
 :root {
-  --color-bg: #dddddd;
+  --color-bg: #f6f4f4;
   --color-text: #1E1B18;
   --color-surface: #F4E6DA;
   --color-border: #E3D3C4;
@@ -106,7 +106,7 @@ option {
 }
 
 :root.dark {
-  --color-bg: #14100E;
+  --color-bg: #000000e0;
   --color-text: #F6F1EB;
   --color-surface: #1E1815;
   --color-border: #2A221D;
@@ -127,3 +127,5 @@ option {
   --glass-shadow: rgba(0, 0, 0, 0.5);
   --glass-table-stacked: rgba(255, 255, 255, 0.04);
 }
+
+/*  */
