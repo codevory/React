@@ -9,19 +9,21 @@ const ThemeProvider = ({children}) => {
 
     //save to body & localstorage
     useEffect(() => {
-        document.body.className = isDark ? "dark" : "light";
-        localStorage.setItem("theme",isDark ? "dark" : "light")
+      const root = document.documentElement
+      root.classList.toggle("dark", isDark)
+      root.classList.toggle("light", !isDark)
+      localStorage.setItem("theme", isDark ? "dark" : "light")
     },[isDark])
 
     //theme toggle function
-    function themeToggle(){
+    function toggleTheme(){
         setisDark(prev => !prev)
     }
 
     //return main function component
   return (
     <div>
-      <themeContext.Provider value={{isDark , themeToggle}}>
+      <themeContext.Provider value={{isDark , toggleTheme}}>
         {children}
       </themeContext.Provider>
     </div>
