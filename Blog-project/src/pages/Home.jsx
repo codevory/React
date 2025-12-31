@@ -1,11 +1,10 @@
-import { Route, Routes, useNavigate } from "react-router-dom"
-import {useMemo , useState,useContext , useEffect} from 'react'
+import {useMemo , useState, useEffect} from 'react'
 import Footer from "../components/BodyComponents/Footer"
-import Navbar from "../components/BodyComponents/Navbar"
 import Posts from "../components/PostComponents/Posts"
 import Sortpost from '../components/FilterComponents/Sortpost'
 import Search from '../components/FilterComponents/Search'
 import Categorysorting from "../components/FilterComponents/Categorysorting"
+import SearchButton from '../components/FilterComponents/Search'
 
 const Home = () => {
 
@@ -241,8 +240,8 @@ const Home = () => {
   const [categoryFilter,setCategoryFilter] = useState("")
 
 useEffect(() => {
-let post = localStorage.getItem("postData")
-if(!post){
+ let postData = JSON.parse(localStorage.getItem("postData"))
+if(!postData){
  localStorage.setItem("postData",JSON.stringify(dumy))
 }
 },[1])
@@ -250,7 +249,7 @@ if(!post){
  let postData = JSON.parse(localStorage.getItem("postData"))
 
 if (!postData) {
-   
+//    localStorage.setItem("postData",JSON.stringify(dumy))
   return (
     <div className="flex justify-center items-center text-center w-full min-h-10 bg-red-400 text-white">
       <p className="font-semibold mr-4 ">No Post Found 
@@ -296,7 +295,7 @@ if(window.innerWidth < 350){
 </span>
 <span className='block mr-1 w-[40%] '>
 
-             <Search onSearch={setsearchQuery} />
+             <SearchButton onSearch={setsearchQuery} />
 </span>
 
         </div>
@@ -326,7 +325,7 @@ if(window.innerWidth < 350){
 
 <span className='block mr-1 w-[40%] '>
 
-             <Search onSearch={setsearchQuery} />
+             <SearchButton onSearch={setsearchQuery} />
 </span>
           
 
