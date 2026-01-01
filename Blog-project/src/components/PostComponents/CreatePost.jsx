@@ -14,7 +14,7 @@ import { useState , useEffect} from 'react'
   })
 
 
-const CreatePost = () => {
+const CreatePost = ({postWidth,postHeight}) => {
   const [title,setTitle] = useState('')
   const [category,setCategory] = useState('')
   const [content,setContent] = useState('')
@@ -62,15 +62,13 @@ useEffect(() => {
  setContent('')
  alert("Posted successfully")
  }}
- className='w-98vw h-2/3 m-4  border-2 border-green-900 rounded-xl '>
+ className='w-98vw h-full m-4 overflow-hidden rounded-xl relative '>  
  <div className='px-2 py-1'>
   <div className='flex justify-between px-2'>
-    <div className='flex flex-col gap-1 w-[50%] '>
-      <label htmlFor ='title' className='text-[16px] font-semibold md:text-xl lg:text-2xl'>Enter your post Title</label>
+    <div className='flex w-[50%]  '>
       <input name='title' id='title' className='text-[15px] md:text-[18px] lg:text-xl h-10 w-2/3 rounded-sm outline-0 ' type='text' placeholder='Enter title for post' onChange={(e) => {setTitle(e.target.value)}} value={title} required />
     </div>
-    <div className='flex flex-col gap-1 w-[45%]'>
-     <label htmlFor='category' className='text-[14px] font-serif md:text-xl lg:text-2xl'>Select your category</label>
+    <div className='flex flex-col gap-1 w-[45%] '>
      <select value={category} onChange={(e) => {setCategory(e.target.value)}} name='category' id='category' required className=' outline-0 text-xs md:text-[18px] lg:text-xl font-medium h-10'>
       <option name='select-option' aria-disabled>Select</option>
       <option name='education'aria-selected >Education</option>
@@ -84,12 +82,12 @@ useEffect(() => {
 <span className='my-1   rounded-[7px] p-1'> Date :  {currentDate} </span>
 <span className='my-1  rounded-[7px] p-1'> Time :  {time} </span>
 </div>
-<div className='h-2/2 m-2'>
-  <textarea value={content} onChange={(e) => {setContent(e.target.value)}} className='w-[96%] h-[80%] outline-1 outline-cyan-200 rounded-[10px] p-2' placeholder='Write your content here' name='content-area' rows={13}  required>
+<div className={` w-full h-50 md:h-60 relative `}>
+  <textarea value={content} onChange={(e) => {setContent(e.target.value)}}  className='w-full md:w-[96%] h-[70%] outline-0 rounded-[10px] px-2 py-1' placeholder='Write your content here' name='content-area' rows={13}  required>
 
   </textarea>
 </div>
-<div className='flex justify-center items-center'>
+<div className='flex justify-center items-center relative '>
 <button  className='w-40 h-10 bg-emerald-500 font-bold rounded-[10px] active:bg-emerald-800 cursor-pointer active:scale-95'>Post</button>
 </div> 
  </div>
