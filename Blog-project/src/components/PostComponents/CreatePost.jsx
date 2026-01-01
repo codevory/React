@@ -14,7 +14,7 @@ import { useState , useEffect} from 'react'
   })
 
 
-const CreatePost = ({postWidth,postHeight}) => {
+const CreatePost = ({}) => {
   const [title,setTitle] = useState('')
   const [category,setCategory] = useState('')
   const [content,setContent] = useState('')
