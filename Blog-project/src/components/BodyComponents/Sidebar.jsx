@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 
-const Sidebar = ({ posts }) => {
+const Sidebar = () => {
+  const posts = JSON.parse(localStorage.getItem("postData"))
   const categories = useMemo(() => {
     const counts = new Map()
     posts.forEach((post) => {
@@ -12,7 +13,7 @@ const Sidebar = ({ posts }) => {
 
   const categoryList = (
     <div className='flex flex-col gap-1 mt-1'>
-      <h1 className='font-sans font-bold text-2xl text-center'>Categories</h1>
+      <h1 className='font-sans text-2xl text-center'>Categories</h1>
       <span className='flex flex-col gap-1'>
         {categories.map(([name, count]) => (
           <span key={name} className='flex justify-between'>
