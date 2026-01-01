@@ -7,9 +7,12 @@ import SearchButton from '../components/FilterComponents/Search'
 import Sidebar from '../components/BodyComponents/Sidebar'
 import LeftMenu from '../components/BodyComponents/LeftMenu'
 import Logo from '/logoVistle.png'
+import { useTheme } from '../components/Theme/ThemeContext'
+import PostNavbar from '../components/PostComponents/PostNavbar'
+import CreatePost from '../components/PostComponents/CreatePost'
 
 const Home = () => {
-
+const {isDark} = useTheme()
   
   let dumy = [
     {
@@ -312,18 +315,20 @@ if(window.innerWidth < 350){
 
 //Final return 
   return (
-  <div className='w-full flex flex-col px-3 md:px-6 py-2 min-h-screen '>
+  <div className='w-full flex flex-col px-3 md:px-6 py-2 min-h-screen  '>
     {/* filter buttons */}
-    <div className='flex flex-col md:flex-row w-full gap-4'> 
-        <div className='lg:w-1/4 flex-col  lg:px-2 lg:rounded hidden lg:flex'>
-        <img width={60} height={60} src={Logo} alt='logo' className='rounded-full ml-4'></img>
+    <div className='flex flex-col md:flex-row w-full gap-4 h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'> 
+        <div className='lg:w-1/4 flex-col  lg:px-2 lg:rounded hidden lg:flex '>
+        <img width={50} height={50} src={Logo} alt='logo' className='rounded-full ml-10 mt-0.5'></img>
         <LeftMenu />
         </div>
 
-        <div className='flex w-full md:w-[70%] lg:w-1/2 flex-col  md:justify-between  px-2 rounded'>
+        <div className={`flex w-full md:w-[70%] lg:w-1/2 flex-col border-x  md:justify-between overflow-y-scroll
+         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-2 rounded 
+             ${isDark ? 'border-zinc-200' : 'border-zinc-900'}`} >
 
     <div className=' flex justify-between items-center py-1 '>
-     <span className='block ml-2 w-[25%]'>
+     <span className=' block ml-2 w-[25%]'>
              <Sortpost onSort={setSortedOrder} />
      </span>
 
@@ -331,27 +336,37 @@ if(window.innerWidth < 350){
       <Categorysorting onSort={setCategoryFilter} />
      </span>
 
-     <span className='block mr-1 w-[40%] '>
+     <span className='block md:hidden mr-1 w-[40%] '>
              <SearchButton onSearch={setsearchQuery} />
      </span>
           
     </div>
 
+<div className='border-y-2 mb-8 overflow-visible w-full h-full flex-5/6  '>
+  <CreatePost />
+</div>
+
 {/* posts & sidebar from here */}
-            <div className='flex justify-center flex-col gap-3.5 '>
+            <div className='flex justify-center flex-col gap-3.5 mt-2 '>
                   <Posts posts={FinalPosts} />
             </div>
             
     </div>
             <div className='w-full md:w-[33%]  px-2 rounded h-screen'>
-            <h1 className='text-4xl font-serif font-extrabold text-center'>Sidebar</h1>
-                  <Sidebar posts={FinalPosts} />
-            </div>
+                    <span className='hidden md:block mr-1 w-full '>
+             <SearchButton onSearch={setsearchQuery} />
+     </span>
+
+           <div className='border rounded-[5px] p-2 mt-2 '>
+                  <Sidebar />
+              </div>
+     </div>
 
 </div>
-        <div>
+        <div className=''>
           <Footer />
         </div>
+
     </div>
   )
 }
