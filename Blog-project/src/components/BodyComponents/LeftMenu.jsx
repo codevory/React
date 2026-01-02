@@ -43,7 +43,7 @@ const items =
 </Tooltip>
 
 <Tooltip content={`Create Post`}>
-    <button onClick={openBox} type='button' aria-label='Create post' className={`mt-2 cursor-pointer flex gap-2 font-bold active:scale-103 text-xl rounded-4xl justify-center items-center px-6 py-3
+    <button onClick={openBox} type='button' aria-label='Create post' className={`w-full mt-2 cursor-pointer inline-flex gap-2 font-bold active:scale-103 text-xl rounded-4xl justify-center items-center px-6 py-3
        ${isDark ? 'bg-white text-black hover:bg-zinc-300' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}>{<SquarePen size={28} />} Post </button>
 </Tooltip>
 
