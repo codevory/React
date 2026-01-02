@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Tooltip from '../Resuables/Tooltip'
 import { House, Telescope, TrendingUp ,SearchCheck , Ellipsis, SquarePen, Bell,UserPlus, CircleEllipsis} from 'lucide-react';
 import { useTheme } from '../Theme/ThemeContext';
 import userLogo from '/Userlogo.webp'
-const LeftMenu = () => {
+import CreatePost from '../PostComponents/CreatePost'
+
+const LeftMenu = ({openBox}) => {
 const {isDark} = useTheme()
+ 
+
 const items = 
 
 <div className='flex-col  flex gap-1.5 h-full mt-2'>
@@ -39,8 +43,8 @@ const items =
 </Tooltip>
 
 <Tooltip content={`Create Post`}>
-    <div aria-label='Create post' className={`mt-2 cursor-pointer flex gap-2 font-bold active:scale-103 text-xl rounded-4xl justify-center items-center px-6 py-3
-       ${isDark ? 'bg-white text-black hover:bg-zinc-300' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}>{<SquarePen size={28} />} Post <span></span></div>
+    <button onClick={openBox} type='button' aria-label='Create post' className={`mt-2 cursor-pointer flex gap-2 font-bold active:scale-103 text-xl rounded-4xl justify-center items-center px-6 py-3
+       ${isDark ? 'bg-white text-black hover:bg-zinc-300' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}>{<SquarePen size={28} />} Post </button>
 </Tooltip>
 
 <Tooltip content={`User info`}>
