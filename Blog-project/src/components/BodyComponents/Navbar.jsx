@@ -22,9 +22,9 @@ const Navbar = () => {
           <img src={Logo} alt='logo' className='w-10 h-10 rounded-full'></img>
           <h1 className='text-xl font-bold font-serif'>BlogVistle</h1>
         </span>
-        <span>
-          <MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
-        </span>
+         <div className='w-1/4 h-full flex-col  px-2 rounded md:hidden flex '>
+<MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
+        </div>
 
 
         <span className='absolute z-1 right-5 top-3'>
