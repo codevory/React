@@ -1,5 +1,4 @@
 import { useState , useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
   const date = new Date();
   const currentDate =  date.toLocaleString('en-US',{
     year:'numeric',
@@ -15,7 +14,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const CreatePost = ({}) => {
-  const navigate = useNavigate()
   const [title,setTitle] = useState('')
   const [category,setCategory] = useState('')
   const [content,setContent] = useState('')
@@ -62,9 +60,6 @@ useEffect(() => {
  setCategory('')
  setContent('')
  alert("Posted successfully")
-  window.setTimeout(() => {
-navigate('/')
-  },1000)
 
  }}
  className='w-98vw h-full m-4 overflow-hidden rounded-xl relative '>  
