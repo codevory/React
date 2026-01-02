@@ -10,8 +10,16 @@ import Logo from '/logoVistle.png'
 import { useTheme } from '../components/Theme/ThemeContext'
 import CreatePost from '../components/PostComponents/CreatePost'
 import MobileMenu from '../components/BodyComponents/MobileMenu'
+import { X } from 'lucide-react';
 
 const Home = () => {
+
+    const [boxOpen,setboxOpen] = useState(false);
+
+    function DialogToggle(){
+      setboxOpen(prev => !prev)
+      console.log(boxOpen)
+    }
       const [isOpen,setisOpen] = useState(false)
 
   function toggleMenu(){
@@ -320,17 +328,37 @@ if(window.innerWidth < 350){
 
 //Final return 
   return (
-  <div className='w-full flex flex-col px-3 md:px-6 py-2   '>
+  <div className={`w-full flex flex-col px-3 md:px-6 py-2 `}   >
+
+
+      <div className={`relative ${boxOpen ? 'block' : 'hidden'}`} >
+  {boxOpen && (
+    <div className="fixed inset-0 bg-black/20 backdrop-blur-xs z-40" />
+  )}
+
+  <div className={`fixed inset-0 z-50 flex items-center justify-center `}>
+    <div className={`w-[50%] h-[60%] rounded-xl relative border-2  border-red-300 ${isDark ? 'bg-zinc-950' : 'bg-gray-100'}`}>
+      <button onClick={DialogToggle} className="cursor-pointer absolute top-1 right-2  active:scale-95">
+        <X strokeWidth={3} size={30} />
+      </button>
+      <CreatePost />
+    </div>
+  </div>
+
+  <div className={boxOpen ? 'pointer-events-none blur-sm' : ''}>
+    {/* the rest of your page content */}
+  </div>
+</div>
     {/* filter buttons */}
     <div className='flex flex-col md:flex-row w-full gap-4 md:h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'> 
         <div className='lg:w-1/4 flex-col  lg:px-2 lg:rounded hidden lg:flex '>
         <img width={50} height={50} src={Logo} alt='logo' className='rounded-full ml-10 mt-0.5'></img>
-        <LeftMenu />
+        <LeftMenu openBox={DialogToggle} />
         </div>
 
-         <div className='w-1/4 h-full flex-col  px-2 rounded md:hidden flex '>
+         {/* <div className='w-1/4 h-full flex-col  px-2 rounded md:hidden flex '>
 <MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
-        </div>
+        </div> */}
         
         <div className={`flex w-full md:w-[70%] lg:w-1/2 flex-col border-x  md:justify-between overflow-y-scroll
          [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-2 rounded 
