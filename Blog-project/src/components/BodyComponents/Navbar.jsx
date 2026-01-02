@@ -3,20 +3,34 @@ import Logo from '/logoVistle.png'
 import '../../index.css'
 import { NavLink } from 'react-router-dom';
 import ThemeSwitch from '../Theme/ThemeSwitch';
+import { Menu } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 import { useTheme } from '../Theme/ThemeContext';
 
 const Navbar = () => {
-const {isDark} = useTheme()
+  const {isDark} = useTheme()
+  const [isOpen,setisOpen] = useState(false)
+
+  function toggleMenu(){
+ setisOpen(prev => !prev)
+ }
+
   return (
-    <div className=' border w-full border-gray-600 rounded-[5px] mr-2 px-2 sm:px-5 md:px-10 py-3 flex justify-between items-center'>
-      <div className='flex gap-0.5 justify-center items-center'>
-      <img src={Logo} alt='logo' className='h-10 w-full object-cover rounded-full' />
-      <h1 className='text-xl md:text-2xl font-bold'>BlogVistle</h1>
-      </div>
-      <div className='text-xl font-semibold flex justify-between items-center gap-2 md:gap-5 lg:gap-10 sm:gap-15  mr-2'>
+      <div className={`flex  w-full h-14 items-center md:gap-5 lg:gap-10 sm:gap-15  mr-2 
+        ${isDark ? 'bg-zinc-900' : 'bg-gray-300'}`}>
+        <span className='absolute md:flex items-center gap-1 hidden top-3 left-5'>
+          <img src={Logo} alt='logo' className='w-10 h-10 rounded-full'></img>
+          <h1 className='text-xl font-bold font-serif'>BlogVistle</h1>
+        </span>
+        <span>
+          <MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
+        </span>
+
+
+        <span className='absolute z-1 right-5 top-3'>
       <ThemeSwitch  />
+        </span>
       </div>
-    </div>
   )
 }
 

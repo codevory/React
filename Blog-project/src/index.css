@@ -5,6 +5,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position:relative;
 }
 
 option {
@@ -19,6 +20,8 @@ option {
   padding:0 1rem;
   box-sizing: border-box;
 }
+
+
 
 .card {
   background-color: var(--color-bg);

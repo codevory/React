@@ -7,7 +7,7 @@ const LeftMenu = () => {
 const {isDark} = useTheme()
 const items = 
 
-<div className='lg:flex-col  flex gap-1.5 h-full mt-2'>
+<div className='flex-col  flex gap-1.5 h-full mt-2'>
 <Tooltip content={`Home`}>
     <div aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-102 text-xl rounded-full  px-6 py-3  
       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={28} />} <span>Home</span></div>

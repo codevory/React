@@ -8,10 +8,15 @@ import Sidebar from '../components/BodyComponents/Sidebar'
 import LeftMenu from '../components/BodyComponents/LeftMenu'
 import Logo from '/logoVistle.png'
 import { useTheme } from '../components/Theme/ThemeContext'
-import PostNavbar from '../components/PostComponents/PostNavbar'
 import CreatePost from '../components/PostComponents/CreatePost'
+import MobileMenu from '../components/BodyComponents/MobileMenu'
 
 const Home = () => {
+      const [isOpen,setisOpen] = useState(false)
+
+  function toggleMenu(){
+ setisOpen(prev => !prev)
+ }
 const {isDark} = useTheme()
   
   let dumy = [
@@ -315,34 +320,39 @@ if(window.innerWidth < 350){
 
 //Final return 
   return (
-  <div className='w-full flex flex-col px-3 md:px-6 py-2 min-h-screen  '>
+  <div className='w-full flex flex-col px-3 md:px-6 py-2   '>
     {/* filter buttons */}
-    <div className='flex flex-col md:flex-row w-full gap-4 h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'> 
+    <div className='flex flex-col md:flex-row w-full gap-4 md:h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'> 
         <div className='lg:w-1/4 flex-col  lg:px-2 lg:rounded hidden lg:flex '>
         <img width={50} height={50} src={Logo} alt='logo' className='rounded-full ml-10 mt-0.5'></img>
         <LeftMenu />
         </div>
 
+         <div className='w-1/4 h-full flex-col  px-2 rounded md:hidden flex '>
+<MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
+        </div>
+        
         <div className={`flex w-full md:w-[70%] lg:w-1/2 flex-col border-x  md:justify-between overflow-y-scroll
          [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-2 rounded 
              ${isDark ? 'border-zinc-200' : 'border-zinc-900'}`} >
 
-    <div className=' flex justify-between items-center py-1 '>
-     <span className=' block ml-2 w-[25%]'>
+    <div className=' flex md:justify-between justify-center gap-[20%] items-center py-1 w-full px-2 md:px-20 '>
+
+     <span className=' hidden md:block ml-1 w-15'>
              <Sortpost onSort={setSortedOrder} />
      </span>
 
-      <span className='block ml-2 w-[25%]'>
+      <span className='block ml-2 w-15'>
       <Categorysorting onSort={setCategoryFilter} />
      </span>
 
-     <span className='block md:hidden mr-1 w-[40%] '>
+     <span className=' block md:hidden  w-full '>
              <SearchButton onSearch={setsearchQuery} />
      </span>
           
     </div>
 
-<div className='border-y-2 mb-8 overflow-visible w-full h-full flex-5/6  '>
+<div className='border-y-2 mb-8 hidden md:block overflow-visible w-full h-full flex-5/6  '>
   <CreatePost />
 </div>
 
