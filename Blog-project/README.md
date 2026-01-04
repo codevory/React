@@ -38,19 +38,19 @@ A modern, feature-rich blog application built with React and Vite. Create, edit,
 ## � Screenshots
 
 ### Light Mode - Desktop View
-![BlogVistle Light Mode](https://github.com/user-attachments/assets/screenshot1.png)
+![BlogVistle Light Mode](./public/Screenshot%202026-01-03%20120247.png)
 *Main blog feed with post listings, categories sidebar, and search functionality*
 
 ### Mobile Responsive View
-![Mobile View Dark Mode](https://github.com/user-attachments/assets/screenshot2.png)
+![Mobile View Dark Mode](./public/Screenshot%202026-01-03%20120525.png)
 *Optimized mobile interface with dark theme support*
 
 ### Dark Mode - Desktop View
-![BlogVistle Dark Mode](https://github.com/user-attachments/assets/screenshot3.png)
+![BlogVistle Dark Mode](./public/Screenshot%202026-01-04%20164311.png)
 *Beautiful dark theme with proper contrast and readability*
 
 ### Create Post Dialog
-![Create Post Modal](https://github.com/user-attachments/assets/screenshot4.png)
+![Create Post Modal](./public/Screenshot%202026-01-04%20181233.png)
 *Modal dialog for creating new blog posts with title, category, and content fields*
 
 ## �🚀 Getting Started
