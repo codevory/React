@@ -57,7 +57,7 @@ const Singleblog = () => {
           </div>
           <span className='flex justify-between'>
             <span>
-              <Likebtn />
+              <Likebtn posts={post} />
             </span>
         <Link to={`/edit/article/${data.slug}`}> <button  className='w-30 h-10 bg-green-500  font-semibold rounded cursor-pointer active:scale-95 p-3 m-2 flex justify-center items-center'>Edit</button></Link>
         <button onClick={() => {
