@@ -260,7 +260,7 @@ const Home = () => {
     if (!postData) {
       localStorage.setItem("postData", JSON.stringify(dumy))
     }
-  }, [1])
+  }, [])
 
 
   //if no post found this div appears.
@@ -273,32 +273,22 @@ const Home = () => {
   }
 
   //sort posts for search queries & filters.
-  const sortedPost = useMemo(() => {
-
-    //check if search query matches the title of posts
-    let filteredPost = postData.filter(post => post.title.toLowerCase().includes(searchQuery.toLowerCase()))
-
-    //filter posts based on newest & oldest 
-    filteredPost.sort((a, b) => {
-      if (sortedOrder === "newest") return b.createdAt - a.createdAt;
-      return a.createdAt - b.createdAt;
-    })
-
-    return filteredPost
-  }, [searchQuery, sortedOrder, postData])
-
-
-  //filters post based on category filter , it uses existing filtered posts. 
-  let FinalPosts = useMemo(() => {
-    let categSorted = sortedPost.filter(post => post.category.toLowerCase().includes(categoryFilter.toLowerCase()))
-    return categSorted
-  }, [categoryFilter, postData])
-
+  const FinalPosts = useMemo(() => {
+    return postData
+      .filter(post =>
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        post.category.toLowerCase().includes(categoryFilter.toLowerCase()))
+      .sort((a, b) =>
+        sortedOrder == "newest" ? b.createdAt - a.createdAt : a.createdAt - b.createdAt
+      )
+  }, [postData, searchQuery, categoryFilter, sortedOrder])
 
   //check device width.
-  if (window.innerWidth < 350) {
-    alert("Kindly turn on the desktop mode for better view")
-  }
+   useEffect(() => {
+    if (window.innerWidth < 350) {
+      alert("Kindly turn on the desktop mode for better view")
+     }
+   },[])
 
 
   //If post not matched on search will return paragraph
@@ -382,9 +372,9 @@ const Home = () => {
           </div>
 
           {/* posts & sidebar from here */}
-          <div className='flex justify-center flex-col gap-3.5 mt-2 '>
+          <main className='flex justify-center flex-col gap-3.5 mt-2 '>
             <Posts posts={FinalPosts} />
-          </div>
+          </main>
 
         </div>
         {/* Sidebar starts */}
@@ -401,7 +391,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <div className=''>
+      <div >
         <Footer />
       </div>
 
