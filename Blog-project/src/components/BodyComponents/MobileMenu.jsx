@@ -6,12 +6,13 @@ import { Menu } from 'lucide-react';
 
 const MobileMenu = ({isOn,Cbfunction}) => {
   const {isDark} = useTheme()
-  const check = isDark ? 'bg-zinc-900' : 'bg-zinc-400'
+  const check = isDark ? 'bg-zinc-800' : 'bg-zinc-200'
 const items = 
 
-<div id='mobileMenu' className={`flex flex-col   gap-5 absolute top-0 left-0 md:hidden transition-transform ease-in duration-300 ${isOn ? check  : ''}  `}>
+<div  className={`flex flex-col   gap-5 absolute top-0 left-0 transition-transform ease-in duration-300 ${isOn ? check  : ''}  `}>
           <span onClick={Cbfunction} className={`relative inline-flex  top-5 left-5 cursor-pointer actve:scale-97 md:hidden`}><Menu size={25} /></span>
-<div id='menuContent' className={`flex-col w-full h-screen flex gap-0.5 mt-4 transition-transform ease-in duration-300 ${isDark ? 'bg-zinc-900' : 'bg-zinc-400'}  ${isOn ? 'traslate-x-10 block bg-black ' : '-translate-x-50 hidden'}`}>
+<div className={`flex-col w-full h-screen flex gap-0.5 mt-4 transition-transform ease-in duration-300 ${isDark ? 'bg-zinc-800' : 'bg-zinc-200'}
+  ${isOn ? 'traslate-x-10 block bg-black ' : '-translate-x-50 hidden'}`}>
     
     <div aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-95 text-[15px] rounded-full  px-3 py-1.5  
       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={20} />} <span>Home</span></div>
