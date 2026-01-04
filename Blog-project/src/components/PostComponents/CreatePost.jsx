@@ -1,4 +1,5 @@
 import { useState , useEffect} from 'react'
+import { useTheme } from '../Theme/ThemeContext';
   const date = new Date();
   const currentDate =  date.toLocaleString('en-US',{
     year:'numeric',
@@ -14,6 +15,7 @@ import { useState , useEffect} from 'react'
 
 
 const CreatePost = ({}) => {
+  const {isDark} = useTheme()
   const [title,setTitle] = useState('')
   const [category,setCategory] = useState('')
   const [content,setContent] = useState('')
@@ -88,7 +90,8 @@ useEffect(() => {
   </textarea>
 </div>
 <div className='flex justify-center items-center relative '>
-<button  className='w-40 h-10 bg-emerald-500 font-bold rounded-[10px] active:bg-emerald-800 cursor-pointer active:scale-95'>Post</button>
+<button  className={`w-40 h-10 font-bold rounded-[10px] active:bg-emerald-800 active:scale-95 cursor-pointer
+  ${isDark ? 'bg-gray-200 text-black' : 'bg-zinc-800 text-white'} ${title != '' ? 'block' : ' hidden' }`}>Post</button>
 </div> 
  </div>
     </form>
