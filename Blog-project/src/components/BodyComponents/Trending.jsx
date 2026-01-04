@@ -5,9 +5,9 @@ import Likebtn from '../Buttons/Likebtn'
 import {FaRegHeart,FaHeart} from 'react-icons/fa'
 
 const Trending = () => {
+  const posts = JSON.parse(localStorage.getItem("postData"))
     const [liked,setLiked] = useState(false)
     const {isDark} = useTheme()
-    const posts = JSON.parse(localStorage.getItem("postData"))
   const mostLiked = posts.filter((post) => post.engagementData.likes > 7)
 
   const getPreview = (text,limit) => {

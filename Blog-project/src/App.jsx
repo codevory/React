@@ -1,4 +1,3 @@
-import { useState , useEffect} from 'react'
 import './index.css'
 import Home from './pages/Home'
 import CreatePost from '../src/components/PostComponents/CreatePost.jsx'
@@ -14,12 +13,12 @@ function App() {
 return <div className='w-full min-h-screen overflow-hidden '>
        <Navbar />
        <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/edit/article/:slug' element={<EditPost />} />
-        <Route path='/article/:slug' element={<Singleblog />} />
-        <Route path='/post' element={<CreatePost />} />
-        <Route path='*' element={<PagenotFound />} />
-        <Route path='/trending' element={<Trending />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/edit/article/:slug' element={<EditPost />} />
+      <Route path='/article/:slug' element={<Singleblog />} />
+      <Route path='/post' element={<CreatePost />} />
+      <Route path='*' element={<PagenotFound />} />
+      <Route path='/trending' element={<Trending />} />
       </Routes>
       <Outlet />
     </div>

@@ -11,6 +11,7 @@ import { useTheme } from '../components/Theme/ThemeContext'
 import CreatePost from '../components/PostComponents/CreatePost'
 import MobileMenu from '../components/BodyComponents/MobileMenu'
 import { X } from 'lucide-react';
+import Trending from '../components/BodyComponents/Trending'
 
 const Home = () => {
 
@@ -18,7 +19,6 @@ const Home = () => {
 
     function DialogToggle(){
       setboxOpen(!boxOpen)
-      console.log(boxOpen)
     }
       const [isOpen,setisOpen] = useState(false)
 
@@ -383,7 +383,7 @@ if(window.innerWidth < 350){
 
 {/* posts & sidebar from here */}
             <div className='flex justify-center flex-col gap-3.5 mt-2 '>
-                  <Posts posts={FinalPosts} />
+         <Posts posts={FinalPosts} />
             </div>
             
     </div>

@@ -1,41 +1,39 @@
-import React,{useState} from 'react'
 import Tooltip from '../Resuables/Tooltip'
-import { House, Telescope, TrendingUp ,SearchCheck , Ellipsis, SquarePen, Bell,UserPlus, CircleEllipsis} from 'lucide-react';
+import { House, Telescope, TrendingUp , Ellipsis, SquarePen, Bell,UserPlus, CircleEllipsis} from 'lucide-react';
 import { useTheme } from '../Theme/ThemeContext';
 import userLogo from '/Userlogo.webp'
-import CreatePost from '../PostComponents/CreatePost'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const LeftMenu = ({openBox}) => {
 const {isDark} = useTheme()
- 
+
 
 const items = 
 
 <div className='flex-col  flex gap-1.5 h-full mt-2 z-140'>
 <Tooltip content='Home'>
-    <Link to={`/`} aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-102 text-xl rounded-full  px-6 py-3  
-      ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={28} />} <span>Home</span></Link>
+    <NavLink to={`/`} end aria-label='Home' className={` cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-102 text-xl rounded-full  px-6 py-3  
+      ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={28} />} <span>Home</span></NavLink>
 </Tooltip>
 
 <Tooltip content={`Explore`}>
-    <div aria-label='Explore' className={`cursor-pointer inline-flex rounded-full  gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
-       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<Telescope size={28} />} <span>Explore</span></div>
+    <NavLink aria-label='Explore' className={`cursor-pointer inline-flex rounded-full  gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
+       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<Telescope size={28} />} <span>Explore</span></NavLink>
 </Tooltip>
 
 <Tooltip content={`Notfications`}>
-    <div aria-label='Notifications' className={`cursor-pointer inline-flex rounded-full  gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3  
-       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<Bell size={28} />} <span>Notifications</span></div>
+    <NavLink aria-label='Notifications' className={`cursor-pointer inline-flex rounded-full  gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3  
+       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<Bell size={28} />} <span>Notifications</span></NavLink>
 </Tooltip>
 
 <Tooltip content={`Trending`}>
-    <Link to={`/trending`} aria-label='Trending' className={`cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
-       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={28} />} <span>Trending</span></Link>
+    <NavLink to={`/trending`} aria-label='Trending' className={` cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
+       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={28} />} <span>Trending</span></NavLink>
 </Tooltip>
 
 <Tooltip content={`Coming Soon`}>
-    <div aria-label='Follow' className={`cursor-pointer  inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
-       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}`}>{<UserPlus size={28} />} <span>Follow</span></div>
+    <NavLink aria-label='Follow' className={`cursor-pointer  inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
+       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}`}>{<UserPlus size={28} />} <span>Follow</span></NavLink>
 </Tooltip>
 
 <Tooltip content={`Find More`}>
@@ -61,9 +59,6 @@ const items =
       </span>
   </div>
 </div>
-
-
-
 
 
 
