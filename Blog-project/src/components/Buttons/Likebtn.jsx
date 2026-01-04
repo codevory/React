@@ -1,17 +1,16 @@
 import { FcLikePlaceholder } from "react-icons/fc";
 import { IconContext } from "react-icons/lib";
 import {FaRegHeart,FaHeart} from 'react-icons/fa'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useMemo } from 'react'
 import { useParams } from "react-router-dom";
 
 
-const Likebtn = (post) => {
+const Likebtn = ({posts}) => {
    const [liked,setLiked] = useState(false)
   const [likeCount ,setLikeCount] = useState(0)
     const { slug } = useParams()
-    const posts = JSON.parse(localStorage.getItem("postData"))
+    // const posts = JSON.parse(localStorage.getItem("postData"))
     const data = posts.find(p => p.slug == slug)
-
 
     useEffect(() => {
       let updated = posts.map((post) => {
@@ -29,11 +28,12 @@ const Likebtn = (post) => {
   },[liked])
 
 
-
   return (
     <div className="flex gap-1 justify-center items-center h-13">
-   <button onClick={() => {setLiked(!liked)
+   <button onClick={() => {
+    setLiked(!liked)
     {likeCount == 0 ? (setLikeCount(likeCount + 1)) : (setLikeCount(likeCount - 1))}
+    console.log(likeCount)
    }}>
 {liked ? (<FaHeart size={26} color="red" />) : (<FaHeart size={24} color="pink" className=" active:scale-95" />)}
    </button>
