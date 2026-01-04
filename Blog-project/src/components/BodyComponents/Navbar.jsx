@@ -22,7 +22,7 @@ const Navbar = () => {
           <img src={Logo} alt='logo' className='w-10 h-10 rounded-full'></img>
           <h1 className='text-xl font-bold font-serif'>BlogVistle</h1>
         </span>
-         <div className='w-1/4 h-full flex-col flex  px-2 rounded '>
+         <div className=' flex-col flex  px-2 rounded '>
 <MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
         </div>
 
