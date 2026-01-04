@@ -10,8 +10,8 @@ const MobileMenu = ({isOn,Cbfunction}) => {
 const items = 
 
 <div  className={`flex flex-col   gap-5 absolute top-0 left-0 transition-transform ease-in duration-300 ${isOn ? check  : ''}  `}>
-          <span onClick={Cbfunction} className={`relative inline-flex  top-5 left-5 cursor-pointer actve:scale-97 md:hidden`}><Menu size={25} /></span>
-<div className={`flex-col w-full h-screen flex gap-0.5 mt-4 transition-transform ease-in duration-300 ${isDark ? 'bg-zinc-800' : 'bg-zinc-200'}
+          <span onClick={Cbfunction} className={`relative inline-flex  top-5 left-5 cursor-pointer actve:scale-97 lg:hidden`}><Menu size={25} /></span>
+<div className={`flex-col w-full h-screen flex gap-0.5 mt-4 ${isDark ? 'bg-zinc-800' : 'bg-zinc-200'}
   ${isOn ? 'traslate-x-10 block bg-black ' : '-translate-x-50 hidden'}`}>
     
     <div aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-95 text-[15px] rounded-full  px-3 py-1.5  
