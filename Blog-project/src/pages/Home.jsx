@@ -328,7 +328,7 @@ if(window.innerWidth < 350){
 
 //Final return 
   return (
-  <div className={`w-full flex flex-col px-3 md:px-6 py-2 `}   >
+  <div className={`w-full flex flex-col px-2 md:px-6 py-2 `}   >
 
 
       <div className={`relative ${boxOpen ? 'block' : 'hidden'}`} >
@@ -352,13 +352,9 @@ if(window.innerWidth < 350){
     {/* filter buttons */}
     <div className='flex flex-col md:flex-row w-full gap-4 md:h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'> 
         <div className='lg:w-1/4 flex-col  lg:px-2 lg:rounded hidden lg:flex '>
-        <img width={50} height={50} src={Logo} alt='logo' className='rounded-full ml-10 mt-0.5'></img>
+        <img width={40} height={40} src={Logo} alt='logo' className='rounded-full ml-14 '></img>
         <LeftMenu openBox={DialogToggle} />
         </div>
-
-         {/* <div className='w-1/4 h-full flex-col  px-2 rounded md:hidden flex '>
-<MobileMenu isOn={isOpen} Cbfunction={toggleMenu} />
-        </div> */}
         
         <div className={`flex w-full md:w-[70%] lg:w-1/2 flex-col border-x  md:justify-between overflow-y-scroll
          [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-2 rounded 
