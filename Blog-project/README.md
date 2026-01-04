@@ -46,11 +46,11 @@ A modern, feature-rich blog application built with React and Vite. Create, edit,
 *Optimized mobile interface with dark theme support*
 
 ### Dark Mode - Desktop View
-![BlogVistle Dark Mode](./public/Dark-Mode - Desktop-View.png)
+![BlogVistle Dark Mode](./public/Dark-Desktop.png)
 *Beautiful dark theme with proper contrast and readability*
 
 ### Create Post Dialog
-![Create Post Modal](./public/Light-mode-desktop.png)
+![Create Post Modal](./public/Create-Post-Dialog.png)
 *Modal dialog for creating new blog posts with title, category, and content fields*
 
 ## �🚀 Getting Started
