@@ -10,19 +10,19 @@ import Trending from './components/BodyComponents/Trending.jsx'
 
 function App() {
 
-return <div className='w-full min-h-screen overflow-hidden '>
-       <Navbar />
-       <Routes>
+  return <div className='w-full min-h-screen overflow-hidden '>
+    <Navbar />
+    <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/edit/article/:slug' element={<EditPost />} />
       <Route path='/article/:slug' element={<Singleblog />} />
       <Route path='/post' element={<CreatePost />} />
       <Route path='*' element={<PagenotFound />} />
       <Route path='/trending' element={<Trending />} />
-      </Routes>
-      <Outlet />
-    </div>
-  
+    </Routes>
+    <Outlet />
+  </div>
+
 }
 
 export default App

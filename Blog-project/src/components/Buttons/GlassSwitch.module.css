@@ -1,29 +1,30 @@
-.switch{
-    --size:30px;
-    width:calc(var(--size) * 2);
+.switch {
+    --size: 30px;
+    width: calc(var(--size) * 2);
     height: var(--size);
     display: flex;
     align-items: center;
-    position:relative;
+    position: relative;
     cursor: pointer;
     border-radius: 999px;
     transition: all 0.3s ease;
 }
 
-.thumb{
+.thumb {
     position: absolute;
-    left:0;
+    left: 0;
     bottom: 2px;
     width: calc(var(--size) -4px);
     height: calc(var(--size) -4px);
     border-radius: 50%;
-    transition:transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.on .thumb{
+.on .thumb {
     transform: translateX(var(--size));
 }
-.thumb:hover{
-background-color: rgba(201, 201, 89, 0.51);
-scale:1;
+
+.thumb:hover {
+    background-color: rgba(201, 201, 89, 0.51);
+    scale: 1;
 }

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 const Sidebar = () => {
   const posts = JSON.parse(localStorage.getItem("postData"))
