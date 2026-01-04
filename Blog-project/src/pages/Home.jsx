@@ -17,7 +17,7 @@ const Home = () => {
     const [boxOpen,setboxOpen] = useState(false);
 
     function DialogToggle(){
-      setboxOpen(prev => !prev)
+      setboxOpen(!boxOpen)
       console.log(boxOpen)
     }
       const [isOpen,setisOpen] = useState(false)
@@ -337,7 +337,7 @@ if(window.innerWidth < 350){
   )}
 
   <div className={`fixed inset-0 z-50 flex items-center justify-center `}>
-    <div className={`w-[50%] h-[60%] rounded-xl relative border-2  border-red-300 ${isDark ? 'bg-zinc-950' : 'bg-gray-100'}`}>
+    <div className={`lg:w-[52%] h-[60%] sm:w-2/3 rounded-xl relative border-2  border-red-300 ${isDark ? 'bg-zinc-950' : 'bg-gray-100'}`}>
       <button onClick={DialogToggle} className="cursor-pointer absolute top-1 right-2  active:scale-95">
         <X strokeWidth={3} size={30} />
       </button>
@@ -376,8 +376,9 @@ if(window.innerWidth < 350){
           
     </div>
 
-<div className='border-y-2 mb-8 hidden md:block overflow-visible w-full h-full flex-5/6  '>
-  <CreatePost />
+<div className='border-t mb-4   w-full h-full   '>
+  {/* <CreatePost /> */}
+  <input type='search' placeholder='What do You think of today ?'  onFocus={DialogToggle} className='hidden sm:block w-full h-20 animate-pulse outline-0 px-4 py-2 '/>
 </div>
 
 {/* posts & sidebar from here */}
