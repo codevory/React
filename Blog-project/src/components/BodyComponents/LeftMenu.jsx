@@ -4,6 +4,7 @@ import { House, Telescope, TrendingUp ,SearchCheck , Ellipsis, SquarePen, Bell,U
 import { useTheme } from '../Theme/ThemeContext';
 import userLogo from '/Userlogo.webp'
 import CreatePost from '../PostComponents/CreatePost'
+import { Link } from 'react-router-dom';
 
 const LeftMenu = ({openBox}) => {
 const {isDark} = useTheme()
@@ -11,10 +12,10 @@ const {isDark} = useTheme()
 
 const items = 
 
-<div className='flex-col  flex gap-1.5 h-full mt-2'>
-<Tooltip content={`Home`}>
-    <div aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-102 text-xl rounded-full  px-6 py-3  
-      ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={28} />} <span>Home</span></div>
+<div className='flex-col  flex gap-1.5 h-full mt-2 z-140'>
+<Tooltip content='Home'>
+    <Link to={`/`} aria-label='Home' className={`cursor-pointer inline-flex  gap-2 font-medium active:font-bold active:scale-102 text-xl rounded-full  px-6 py-3  
+      ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '} `}>{<House size={28} />} <span>Home</span></Link>
 </Tooltip>
 
 <Tooltip content={`Explore`}>
@@ -28,8 +29,8 @@ const items =
 </Tooltip>
 
 <Tooltip content={`Trending`}>
-    <div aria-label='Trending' className={`cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
-       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={28} />} <span>Trending</span></div>
+    <Link to={`/trending`} aria-label='Trending' className={`cursor-pointer inline-flex rounded-full gap-2 font-medium active:font-bold active:scale-102 text-xl  px-6 py-3 
+       ${isDark ? 'hover:bg-zinc-800' : ' hover:bg-zinc-300 '}  `}>{<TrendingUp size={28} />} <span>Trending</span></Link>
 </Tooltip>
 
 <Tooltip content={`Coming Soon`}>
@@ -47,7 +48,6 @@ const items =
        ${isDark ? 'bg-white text-black hover:bg-zinc-300' : 'bg-zinc-900 text-white hover:bg-zinc-800'}`}>{<SquarePen size={28} />} Post </button>
 </Tooltip>
 
-<Tooltip content={`User info`}>
   <div className={`inline-flex items-center gap-x-2 cursor-pointer px-6 py-2 mt-10 rounded-full ${isDark ? 'hover:bg-zinc-800' : 'hover:bg-zinc-300'}`}>
        <img src={userLogo} alt='user Profile' className='size-12 rounded-full'></img>
 
@@ -60,7 +60,6 @@ const items =
          <Ellipsis size={20} />
       </span>
   </div>
-</Tooltip>
 </div>
 
 
@@ -69,9 +68,9 @@ const items =
 
 
   return (
-   <div>
+    <>
     {items}
-   </div>
+    </>
   )
 }
 
