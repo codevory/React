@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+#bottom{
+    background: linear-gradient(transparent,black);
+}
+#result{
+    position:relative;
+}
+
+:root{
+    --colorPrimary:rgb(0, 84, 97);
+    --colorSecondary:rgb(12, 119, 121);
+    --colorTertiary:rgb(36, 158, 148);
+    --colorQuad:rgb(59, 193, 168);
+
+}
