@@ -1,0 +1,22 @@
+body{
+    background-color: rgba(0, 0, 0, 0.857);
+    color:white;
+}
+
+button{
+    width: 140px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: pink;
+    color:black;
+    margin: 10px;
+}
+
+input{
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: rgb(82, 100, 182);
+    color:black;
+    margin: 10px;  
+}

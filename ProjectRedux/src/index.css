@@ -1,8 +1,0 @@
-@import "tailwindcss";
-
-#bottom{
-    background: linear-gradient(transparent,black);
-}
-#result{
-    position:relative;
-}
