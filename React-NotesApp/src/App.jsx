@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { ThemeToggle } from './components/ThemeContext/ThemeToggle'
 import { useTheme } from './components/ThemeContext/ThemeContext'
@@ -43,7 +41,7 @@ const deleteTask = (idx) => {
 }
 
   return (
-   <div className={`w-screen h-full overflow-hidden ${isDark ? "bg-zinc-800 text-white" : "bg-white text-slate-800"} `}>
+   <div className={`w-screen min-h-screen py-2 overflow-hidden ${isDark ? "bg-zinc-800 text-white" : "bg-white text-slate-800"} `}>
     <div>
       <ThemeToggle />
     </div>
