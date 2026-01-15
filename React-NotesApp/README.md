@@ -1,16 +1,69 @@
-# React + Vite
+# React Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple notes app built with React + Vite and styled with Tailwind CSS. Create notes with a title and details, toggle dark/light theme, and delete notes with a confirmation.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add a note (title + details) with basic validation
+- View recent notes in a scrollable list
+- Delete notes (with confirm dialog)
+- Dark / light mode toggle (theme persists in `localStorage`)
+- Responsive layout (form + list side-by-side on larger screens)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS (via `@tailwindcss/vite`)
+- ESLint
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (LTS recommended)
+- npm
+
+### Install & Run
+
+From the `React-NotesApp` folder:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local dev URL printed in the terminal (usually `http://localhost:5173`).
+
+## Scripts
+
+```bash
+npm run dev      # start development server
+npm run build    # create production build
+npm run preview  # preview production build locally
+npm run lint     # run eslint
+```
+
+## Project Structure
+
+```text
+src/
+	App.jsx                         # notes UI + add/delete logic
+	main.jsx                        # app bootstrap
+	App.css                         # Tailwind import + app styles
+	components/
+		ThemeContext/
+			ThemeContext.jsx            # theme state + localStorage sync
+			ThemeToggle.jsx             # toggle button
+```
+
+## Notes & Limitations
+
+- Notes are stored in component state, so they reset on page refresh.
+- Only the theme is persisted (stored in `localStorage` under the key `theme`).
+
+## Quick Ideas to Extend
+
+- Persist notes to `localStorage` (or a backend) so they survive refresh
+- Add edit functionality and timestamps
+- Add search / filter for notes
