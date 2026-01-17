@@ -1,16 +1,66 @@
-# React + Vite
+## Media Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Discover, preview, and save media from Unsplash (photos), Pexels (videos), and Tenor (GIFs) in a single place. Built with React, Redux Toolkit, and Vite.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search across photos, videos, and GIFs with tabbed filtering
+- Infinite-like refresh by switching tabs on the same query
+- Save items to a personal collection with localStorage persistence and toast feedback
+- Open original media in a new tab; responsive grid layout with hover states
+- Loading indicator and basic error handling during fetches
 
-## React Compiler
+### Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite 7
+- Redux Toolkit + React Redux for state management
+- React Router 7 for routing
+- Axios for API requests; React Toastify for notifications
+- Tailwind CSS 4 (using the `@import "tailwindcss";` entry) plus custom CSS variables in [src/index.css](src/index.css)
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18+
+- API keys for Unsplash, Pexels, and Tenor
+
+### Environment Variables
+
+Create a `.env` file in the project root (see [example.env](example.env)):
+
+```env
+VITE_UNSPLASH_KEY=your_unsplash_api_key
+VITE_TENOR_KEY=your_tenor_api_key
+VITE_PEXELS_KEY=your_pexels_api_key
+```
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running the App
+
+- Development: `npm run dev`
+- Lint: `npm run lint`
+- Production build: `npm run build`
+- Preview build: `npm run preview`
+
+### Usage
+
+1. Enter a search term and submit.
+2. Switch between Photos, Videos, and GIF tabs to fetch from the corresponding API.
+3. Click any result to open the source media in a new tab.
+4. Use Save on a result to add it to **myCollection**; visit the myCollection route to review or remove items.
+
+### Key Files
+
+- Routing and layout: [src/App.jsx](src/App.jsx)
+- API helpers: [src/api/mediaApi.js](src/api/mediaApi.js)
+- State slices: [src/redux/features/searchSlice.js](src/redux/features/searchSlice.js), [src/redux/features/collectionSlice.js](src/redux/features/collectionSlice.js)
+- UI: [src/components](src/components) (SearchBar, Tabs, ResultGrid, ResultCard, Navbar, CollectionCard)
+
+### Notes
+
+- Collections persist in `localStorage`; clearing browser storage removes saved items.
+- API rate limits apply; failures surface as a simple error state in the grid.
