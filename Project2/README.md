@@ -1,16 +1,45 @@
-# React + Vite
+# Project 2 – Picsum Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal React + Vite app that fetches photo metadata from the Picsum API, renders cards with author names, and paginates through results. Styling uses Tailwind CSS v4 via the new `@import "tailwindcss"` entrypoint.
 
-Currently, two official plugins are available:
+## Quick start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Install dependencies: `npm install`
+- Start dev server: `npm run dev`
+- Create production build: `npm run build`
+- Preview build locally: `npm run preview`
 
-## React Compiler
+Requires Node.js 18+.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Fetches 20 photos per page from `https://picsum.photos/v2/list` using `axios` with basic pagination state in [src/App.jsx](src/App.jsx#L6-L53).
+- Displays a loading placeholder while data is empty, then renders a grid of cards with image + author in [src/components/Card.jsx](src/components/Card.jsx#L3-L17).
+- Prev/Next pagination controls reset the list while fetching and disable the prev button on page 1.
+- Simple Tailwind-driven layout with scrollable viewport container defined in [src/App.jsx](src/App.jsx#L43-L53) and imported styles in [src/App.css](src/App.css#L1).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech stack
+
+- React 19 with Vite 7
+- Axios for HTTP requests
+- Tailwind CSS v4 (via `@tailwindcss/vite` plugin)
+
+## API details
+
+- Endpoint: `GET https://picsum.photos/v2/list?page={page}&limit=20`
+- Response shape: array of `{ id, author, width, height, url, download_url }`
+- Cards link to the original `url` in a new tab and show the `download_url` image.
+
+## Project structure
+
+- [src/main.jsx](src/main.jsx#L1-L10) – mounts the app.
+- [src/App.jsx](src/App.jsx#L6-L64) – data fetching, pagination state, layout.
+- [src/components/Card.jsx](src/components/Card.jsx#L3-L17) – presentational card component.
+- [src/App.css](src/App.css#L1) – Tailwind import.
+
+## Notes and possible improvements
+
+- `copyData` state in [src/App.jsx](src/App.jsx#L9-L13) is currently unused; remove or wire it into caching/pagination history.
+- Add error handling and retry UI around the API call.
+- Consider skeleton loaders instead of the text-only loading state.
+- Add tests for the pagination logic and card rendering.
