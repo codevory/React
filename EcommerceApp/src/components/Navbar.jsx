@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router'
-import { onSearch } from '../api/items'
 import { useDispatch } from 'react-redux'
 import { setQuery} from '../store/searchSlice'
 const Navbar = () => {
@@ -13,8 +12,9 @@ const Navbar = () => {
       <div className='flex gap-5 items-center'>
         <form onSubmit={(e) => {
             e.preventDefault()
-            dispatch(setQuery(text))
+            console.log(text)
             setText('')
+            dispatch(setQuery(text))
         }}>
       <input value={text} onChange={(e) => setText(e.target.value)} type='search' className='w-80 h-8 rounded outline-0 border '></input>
         </form>

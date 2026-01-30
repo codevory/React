@@ -5,6 +5,7 @@ import ItemGrid from './components/item/ItemGrid'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import Checkout from './pages/Checkout'
+import ProductCard from './components/item/ProductCard'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/shop' element={<Shop />} />
       <Route path='/checkout' element={<Checkout />} />
+      <Route path='/:slug' element={<ProductCard />} />
     </Routes>
     </>
   )

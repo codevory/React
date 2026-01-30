@@ -1,10 +1,7 @@
-import axios from "axios";
-
-export const onSearch = async ({ query }) => {
-  const res = await axios.get(`https://dummyjson.com/products/search?`, {
-    params: {
-      q: query,
-    },
-  });
-  return res.data;
+export const onSearch = async (query) => {
+  let result = [];
+  const res = await fetch(`https://dummyjson.com/products/search?q=${query}`)
+    .then((res) => res.json())
+    .then((data) => result.push(data));
+  return result;
 };
