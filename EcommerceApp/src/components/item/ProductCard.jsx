@@ -1,9 +1,9 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {useParams} from 'react-router-dom'
-
+import { setItems } from '../../store/cartSlice'
 const ProductCard = () => {
-  const {updateTotal,setItems} = useSelector(state => state.cart)
+ // const {updateTotal,setItems} = useSelector((state) => state.cart)
+  console.log(setItems)
   const dispatch = useDispatch()
     const {slug} = useParams()
     const {results} = useSelector(store => store.search)
@@ -26,8 +26,7 @@ const ProductCard = () => {
             <span>{item.rating}</span>
         </div>
         <button onClick={() =>{
-          dispatch(setItems(item))
-        }}
+          dispatch(setItems({item}))}}
         className='bg-gray-300 text-black p-4 w-40 h-9 rounded-xl flex justify-center items-center'>Add to cart</button>
       </div>
     </div>

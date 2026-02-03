@@ -2,9 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [
     {
-      name: "",
-      price: 0,
-      quantity: 0,
+      product: [],
+      qty: 0,
     },
   ],
   totalValue: 0,
@@ -14,10 +13,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setItems: (state, action) => {
-      ((state.items.name = action.payload),
-        (state.items.image = action.payload));
-      state.items.price = action.payload;
-      console.log(items);
+      const alreadyEx = state.items.find((pr) => pr.id === action.payload.id);
+      if (!alreadyEx) {
+        ((state.items = [...state.items, action.payload]),
+          console.log("items update triggred"),
+          console.log(state.items));
+      } else {
+        state.items = [...state.items, (state.items.qty += 1)];
+      }
     },
     updateTotal: (state, action) => {
       state.totalValue = action.payload;
