@@ -23,7 +23,6 @@ const slugify = (title) => title
 dispatch(setLoading(true))
 let data = [];
 let response = await onSearch(query);
-console.log(response)
 data = response[0].products.map((item) => ({
   id:item.id,
   title:item.title,
