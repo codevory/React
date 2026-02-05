@@ -13,8 +13,7 @@ const searchSlice = createSlice({
       state.query = action.payload;
     },
     setResults: (state, action) => {
-      ((state.results = action.payload),
-        console.log("results from store : ", state.results));
+      state.results = action.payload;
     },
 
     setLoading: (state, action) => {
