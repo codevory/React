@@ -9,7 +9,6 @@ const getData = async() => {
  .then((data) => console.log(data))
 } 
   return (<>
-  <Navbar />
   <div className='max-w-screen h-full flex justify-center gap-10 flex-wrap p-4'>
 
   <ItemGrid />
