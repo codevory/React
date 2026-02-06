@@ -26,8 +26,8 @@ const ProductCard = () => {
             
             <div className='flex justify-between px-2'>
               <span>${item.price}</span>
-              <div>
-               <span>{<Star size={13} stroke='black' fill='black' />}</span>
+              <div className='flex gap-1 justify-center items-center'>
+               <span>{<Star size={13} stroke='black' fill='green' />}</span>
                {item.rating}</div>
             </div>
 
