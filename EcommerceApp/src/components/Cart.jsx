@@ -1,13 +1,17 @@
-import React,{useMemo} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import {useMemo} from 'react'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
       const {items} = useSelector((store) => store.cart)
-      console.log(items)
       let itemsCount = 0;
     itemsCount =  useMemo(() => {
-        itemsCount = items.reduce((acc,sum) => acc + sum.qty,0)
-        return itemsCount
+      if(!items) return (
+        itemsCount = 0,
+        console.log("item not found")
+      )
+
+     if(items) itemsCount = items.reduce((acc,sum) => acc + sum.qty,0)
+    return itemsCount;
     },[items])
 
     return (
