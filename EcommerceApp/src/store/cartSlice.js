@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
+import { Bounce, Slide, toast } from "react-toastify";
 
 const initialState = {
   items: [],
 };
-console.log(initialState);
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -14,20 +14,14 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id,
       );
       if (!existingItem) {
-        console.log("New item Added");
-        state.items.push({ ...action.payload, qty: 3 });
-        console.log("Added:", action.payload.name);
+        state.items.push({ ...action.payload, qty: 1 });
       } else {
         existingItem.qty += 1;
         console.log("Incremented qty for ID:", existingItem.id);
       }
-      console.log(state.items);
     },
     removeItem: (state, action) => {
-      const selectedItem = state.items.find(
-        (item) => item.id === action.payload.id,
-      );
-      state.items.pop({ selectedItem });
+      state.items = state.items.filter((item) => item.id !== action.payload.id);
     },
     clearCart: (state) => {
       state.items = [];
@@ -35,7 +29,7 @@ const cartSlice = createSlice({
     clearedCart: function () {
       toast.success("Order placed successfully!", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: true,
@@ -48,7 +42,7 @@ const cartSlice = createSlice({
     addedToCart: function () {
       toast.success("added to Cart!", {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -61,7 +55,7 @@ const cartSlice = createSlice({
     removedSuccessfully: function () {
       toast.warn("Removed Successfully!", {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: false,
