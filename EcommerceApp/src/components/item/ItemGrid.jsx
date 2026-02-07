@@ -8,7 +8,6 @@ import EmptyState from '../EmptyState';
 const ItemGrid = () => {
 const { query,results,status,error } = useSelector((store) => store.search)
 const dispatch = useDispatch()
-
   useEffect(() => {
     dispatch(fetchProducts(""))
   },[])
@@ -19,10 +18,9 @@ const dispatch = useDispatch()
     dispatch(fetchProducts(query));
        },[query])
        
-       if(status === "idle") return <EmptyState />;
-       if (status === "error") return <h1>Error : {error}</h1>
-       if(status === "loading") return <Spinner />
-       if(status === "empty") return <EmptyState />
+     if(status === "error") return <h1>Error : {error}</h1> ;
+     if(status === "loading") return <Spinner /> ;
+     if(status === "empty") return <EmptyState /> ;
 
   return (
     results.map((item) => {
