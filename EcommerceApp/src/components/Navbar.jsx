@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { setQuery} from '../store/searchSlice'
-import Cart from './Cart'
+import Cart from './CartComponent'
 import { Search } from 'lucide-react'
 const Navbar = () => {
 
