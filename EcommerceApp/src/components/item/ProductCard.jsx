@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import {useParams} from 'react-router-dom'
-import { addedToCart, setItems } from '../../store/cartSlice'
+import { addItem } from '../../store/cartSlice'
 import { Star } from 'lucide-react'
 const ProductCard = () => {
 
@@ -31,10 +31,8 @@ const ProductCard = () => {
                {item.rating}</div>
             </div>
 
-            <button onClick={() =>{
-             dispatch(setItems(item))
-            dispatch(addedToCart())}}
-            className='bg-gray-300 text-black p-4 w-40 h-9 rounded-xl flex justify-center items-center'>Add to cart</button>
+            <button onClick={() =>{ dispatch(addItem(item)) }}
+            className='bg-gray-300 text-black p-4 w-40 h-9 rounded-xl flex justify-center items-center cursor-pointer hover:bg-emerald-500 active:scale-95 '>Add to cart</button>
          </div>
        </div>
      </div>
