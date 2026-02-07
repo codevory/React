@@ -8,8 +8,11 @@ import EmptyState from '../EmptyState';
 const ItemGrid = () => {
 const { query,results,status,error } = useSelector((store) => store.search)
 const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(fetchProducts(""))
+    if(query === ""){
+      dispatch(fetchProducts(""))
+    }
   },[])
 
   useEffect(() => {
