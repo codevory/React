@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import {useState} from 'react'
 import {Link} from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { setQuery} from '../store/searchSlice'
@@ -19,12 +19,9 @@ const Navbar = () => {
             dispatch(setQuery(text))
         }}>
           <span className='w-85 flex gap-1  items-center border rounded p-0.5'>
-      <input value={text} onChange={(e) => setText(e.target.value)} type='search' className='w-80 h-8 rounded outline-0 border-0 ' ></input>
-          <button onClick={(e) => {
-            e.preventDefault()
-            setText('')
-            dispatch(setQuery(text))
-        }} className='w-7 m-0 p-0 h-auto cursor-pointer'><Search /> </button>
+      <input value={text} onChange={(e) => {setText(e.target.value)}} type='search' className='w-80 h-8 rounded outline-0 border-0 '></input>
+          <button onClick={() =>  dispatch(setQuery(text))} 
+          className='w-7 m-0 p-0 h-auto cursor-pointer'><Search /> </button>
           </span>
        
         </form>
