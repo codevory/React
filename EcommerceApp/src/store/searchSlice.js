@@ -25,25 +25,26 @@ const searchSlice = createSlice({
         if (products.length === 0) {
           state.status = "empty";
           state.results = [];
+        } else {
+          state.results = action.payload.products.map((item) => ({
+            id: item.id,
+            title: item.title,
+            image: item.images[0],
+            thumbnail: item.thumbnail,
+            price: item.price,
+            rating: item.rating,
+            category: item.category,
+            slug: item.title
+              .toLowerCase()
+              .trim()
+              .replace(/[^a-z0-9\s-]/g, "")
+              .replace(/\s+/g, "-"),
+            description:
+              item.title +
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit Soluta maiores ipsum ipsam culpa labore autem ab corrupti accusamus. Magni, vero?",
+          }));
+          state.status = "success";
         }
-        state.results = action.payload.products.map((item) => ({
-          id: item.id,
-          title: item.title,
-          image: item.images[0],
-          thumbnail: item.thumbnail,
-          price: item.price,
-          rating: item.rating,
-          category: item.category,
-          slug: item.title
-            .toLowerCase()
-            .trim()
-            .replace(/[^a-z0-9\s-]/g, "")
-            .replace(/\s+/g, "-"),
-          description:
-            item.title +
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit Soluta maiores ipsum ipsam culpa labore autem ab corrupti accusamus. Magni, vero?",
-        }));
-        state.status = "success";
       })
 
       .addCase(fetchProducts.rejected, (state, action) => {
