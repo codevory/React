@@ -14,3 +14,109 @@
     align-items: center;
     gap:2px;
 }
+
+.divOuter{
+    width: screen;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap:5px;
+}
+
+.divFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:4px;
+}
+
+.divCol{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+
+.outerLoad{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     border:5px solid rgb(176, 196, 203) ;
+     border-top: 5px solid green;
+    animation: spinLoader 0.8s infinite;
+}
+@keyframes spinLoader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.innerLoad{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(71, 71, 219, 0.752);
+}
+
+.error{
+    display: flex;
+    flex-direction: column;
+    width:screen;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(192, 59, 59);
+    color: white;
+}
+
+.page{
+    width: screen;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 118, 18);
+    color: rgb(8, 2, 2);
+}
+
+.dataDiv{
+    width: screen;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:20px
+}
+input{
+    width:80dvw;
+    height: 45px;
+    background-color: black;
+    color: white;
+
+}
+
+button{
+    width: 100px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    border-radius: 9px;
+}
+
+.search{
+    width: screen;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    background-color: pink;
+}

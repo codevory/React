@@ -1,12 +1,13 @@
 import './App.css'
-import TaskTrackerParent from './components/TaskTrackerParent';
+import ApiData from './components/ApiData'
+
 
 function App() {
 
   return (
     <>
       <div>
-       <TaskTrackerParent />
+       <ApiData />
       </div>
     </>
   )
