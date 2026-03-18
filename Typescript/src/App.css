@@ -1,0 +1,16 @@
+.taskTrackerdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.taskForm{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:2px;
+}
