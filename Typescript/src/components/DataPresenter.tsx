@@ -1,4 +1,3 @@
-//import React,{ useState } from 'react'
 import '../App.css'
 
 interface DataPresenterProps {
@@ -26,19 +25,18 @@ const DataPresenter = ({dataLen,id,title,price,rating,description,category,tags,
 
       <div className="divCol">
            <div className="divFlex">
-             <h2>{title}</h2> 
-             <span>{id}</span>
-              <p>{rating}</p>
+             <h3>{title}</h3> 
+              <p>{`❇️${rating}`}</p>
             </div>
-         <p>{description}</p>
+         <p>{description.slice(0,80)}</p>
       </div>
 
       <div className="divFlex">
       <p>{category}</p>
-      <p>{price}</p>
+      <p>{`$${price}`}</p>
       </div>
       
-      <span>{tags}</span>
+      {/* <span>{tags}</span> */}
     </div>
   )
 }
