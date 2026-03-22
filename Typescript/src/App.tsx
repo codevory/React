@@ -1,5 +1,7 @@
 import './App.css'
-import ApiData from './components/ApiData'
+import GridProducts from './components/GridProducts'
+import SearchBar from './components/SearchBar'
+
 
 
 function App() {
@@ -7,7 +9,8 @@ function App() {
   return (
     <>
       <div>
-       <ApiData />
+        <SearchBar />
+        <GridProducts />
       </div>
     </>
   )
