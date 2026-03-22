@@ -35,8 +35,6 @@ const DataPresenter = ({dataLen,id,title,price,rating,description,category,tags,
       <p>{category}</p>
       <p>{`$${price}`}</p>
       </div>
-      
-      {/* <span>{tags}</span> */}
     </div>
   )
 }
