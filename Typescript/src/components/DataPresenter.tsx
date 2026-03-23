@@ -12,7 +12,7 @@ image:string;
 dataLen:number;
 }
 
-const DataPresenter = ({dataLen,id,title,price,rating,description,category,tags,image}:DataPresenterProps) => {
+const DataPresenter = ({dataLen,title,price,rating,description,category,image}:DataPresenterProps) => {
 
   if(dataLen === 0) return <div className='page'>
     <h2>No data found </h2>

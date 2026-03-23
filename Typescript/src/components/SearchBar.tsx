@@ -34,7 +34,6 @@ const SearchBar = () => {
   };
 
 
-
    const query = useAppSelector((store) => store.search.query)
       async function handleFetchData(){
           try {
