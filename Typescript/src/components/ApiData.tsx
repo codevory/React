@@ -1,6 +1,7 @@
 import DataPresenter from './DataPresenter';
 import '../App.css'
 import {useAppSelector } from '../provider/Store';
+import SkeletonCard from './SkeletonCard';
 
 const ApiData = () => {
     const data = useAppSelector((store) => store.data.products);
@@ -9,7 +10,7 @@ const ApiData = () => {
  
 
 
-    if(loading) return <div className='outerLoad'></div>
+    if(loading) return <SkeletonCard count={18} />
     if(error) return <div className='error'>
         <h2>Oops! Error Occured</h2>
         <p>{error}</p>
