@@ -263,3 +263,57 @@ img {
         max-height: 220px;
     }
 }
+
+/* skeleton loading card */
+.skeleton-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f3f3f3;
+}
+
+.skeleton-img {
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.skeleton-text {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.skeleton-text.short {
+  width: 40%;
+}
+
+.skeleton-text.long {
+  width: 80%;
+}
+
+.skeleton-text.price {
+  width: 30%;
+}
+
+/* shimmer animation */
+.skeleton-img,
+.skeleton-text {
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+ /* skeleton loading ends here */
